@@ -24,7 +24,7 @@ describe("phase 3 audit counts come from the decision database", () => {
     const result = await connection.run(`
       SELECT action, count(*) AS n
       FROM jev_decisions
-      WHERE run_id = 'JEV-20260922-V1-PHASE3-TEST' AND call_kind = 'primary' AND status = 'OK'
+      WHERE run_id = 'SYSTEMONE-20260922-V1-PHASE3-TEST' AND call_kind = 'primary' AND status = 'OK'
       GROUP BY action
     `)
     const sqlCounts = Object.fromEntries((await result.getRowObjectsJson()).map((row) => [String(row.action), Number(row.n)]))

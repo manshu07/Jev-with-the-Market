@@ -1,5 +1,5 @@
 /**
- * Read-only independent audit of JEV-20260922-V2.
+ * Read-only independent audit of SYSTEMONE-20260922-V2.
  * Never opens the live V2 database for write: copies DB+WAL to a temp dir first.
  * Writes only audit outputs under results/.
  */
@@ -22,7 +22,7 @@ import {
 } from "../src/phase4/rules"
 import { simulateAll, type DayRecord } from "../src/phase4/simulate"
 
-const RUN_ID = "JEV-20260922-V2"
+const RUN_ID = "SYSTEMONE-20260922-V2"
 const EPS = 0.01
 
 type DecisionRow = {
@@ -78,7 +78,7 @@ async function main() {
     if (existsSync(wal)) copyFileSync(wal, `${copyDb}.wal`)
 
     const decisions = await loadDecisions(copyDb)
-    if (decisions.length === 0) throw new Error("no OK decisions found for JEV-20260922-V2")
+    if (decisions.length === 0) throw new Error("no OK decisions found for SYSTEMONE-20260922-V2")
 
     const lastDecisionDate = [...new Set(decisions.map((row) => row.decision_date))].sort().at(-1)!
     const dates = tradingDates(root, START_DATE, lastDecisionDate)
@@ -543,7 +543,7 @@ function renderReport(input: {
         ].join("\n")
 
   const lines = [
-    "# Phase 4 V2 independent audit — JEV-20260922-V2",
+    "# Phase 4 V2 independent audit — SYSTEMONE-20260922-V2",
     "",
     "Read-only audit. The live experiment database was copied before reading. Decisions, methodology, and production result files were not modified.",
     "",

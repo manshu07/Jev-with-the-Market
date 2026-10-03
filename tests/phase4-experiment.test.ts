@@ -64,7 +64,7 @@ describe("phase 4 recorded experiment", () => {
 
     const phase3 = await DuckDBInstance.create(resolve(root, "data/processed/jev_decisions.duckdb"), { access_mode: "READ_ONLY" })
     const connection = await phase3.connect()
-    const count = await (await connection.run("SELECT count(*) AS n FROM jev_decisions WHERE run_id = 'JEV-20260922-V1-PHASE3-TEST'")).getRowObjectsJson()
+    const count = await (await connection.run("SELECT count(*) AS n FROM jev_decisions WHERE run_id = 'SYSTEMONE-20260922-V1-PHASE3-TEST'")).getRowObjectsJson()
     connection.closeSync()
     phase3.closeSync()
     expect(Number(count[0].n)).toBe(31)

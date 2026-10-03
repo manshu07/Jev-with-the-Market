@@ -237,7 +237,7 @@ function manifestBody(base: string) {
     model: MODEL,
     prompt_version: PROMPT_VERSION,
     benchmark: "NIFTY100_BUY_AND_HOLD",
-    phase3_run_id: "JEV-20260922-V1-PHASE3-TEST",
+    phase3_run_id: "SYSTEMONE-20260922-V1-PHASE3-TEST",
     unavailable_decision_policy: "NO_ACTION",
     portfolio_rules: rules,
     hashes: {

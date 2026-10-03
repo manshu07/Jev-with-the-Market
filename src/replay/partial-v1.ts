@@ -10,7 +10,7 @@ import { simulateAll, type DayRecord } from "../phase4/simulate"
 import type { ReplayAction, ReplayDataset, ReplayDecision, ReplaySnapshot } from "./types"
 
 /** Interrupted V1 artifact run id. Independent of the live Phase 4 experiment id. */
-const INTERRUPTED_RUN_ID = "JEV-20260922-V1"
+const INTERRUPTED_RUN_ID = "SYSTEMONE-20260922-V1"
 
 type StoredRow = {
   decision_date: string

@@ -86,7 +86,7 @@ From the complete momentum ledger (1,432 trades, 1,427 closed):
 | | Detail |
 | --- | --- |
 | Status | Code path fully wired (`scripts/phase4-run.ts`, resume-safe, checkpointed); smoke-proven live on 5-year data (12/12 calls OK, 118 ms) |
-| Cost | ~122k sessions × ~95 eligible stocks ≈ **96,000 calls** to the Vercel AI Gateway (`typesafe-ai/jev`) — paid; no gateway key on this box yet |
+| Cost | ~122k sessions × ~95 eligible stocks ≈ **96,000 calls** to the Vercel AI Gateway (`System One`) — paid; no gateway key on this box yet |
 | Time | ~16 h serial, ~4–5 h at concurrency 4 (backoff/retry machinery already built) |
 | To start | Provide `AI_GATEWAY_API_KEY` → I set the new experiment id, run Phase 4, and this report gains the System One column + System One-specific trade holding stats |
 

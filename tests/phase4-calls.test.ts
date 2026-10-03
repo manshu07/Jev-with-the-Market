@@ -226,7 +226,7 @@ describe("phase 4 Jev calls", () => {
   })
 
   it("does not open the interrupted experiment database", () => {
-    expect(() => assertNotInterruptedDatabase(resolve(root, INTERRUPTED_PHASE4_DB))).toThrow(/JEV-20260922-V1/)
+    expect(() => assertNotInterruptedDatabase(resolve(root, INTERRUPTED_PHASE4_DB))).toThrow(/SYSTEMONE-20260922-V1/)
     const source = readFileSync(resolve(root, "scripts/phase4-run.ts"), "utf8")
     expect(source.includes("progress.json")).toBe(false)
     expect(retryDelayMs(1, null)).toBe(1_000)

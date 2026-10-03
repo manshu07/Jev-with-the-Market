@@ -15,7 +15,7 @@ export function ExperimentNav({ active }: { active: ExperimentNavId }) {
   return (
     <header className="flex shrink-0 items-center justify-between gap-4 border-b border-white/10 px-4 py-3 md:px-6">
       <div>
-        <p className="text-[11px] tracking-[0.18em] text-[#9aa4b8]">JEV INVESTMENT LAB</p>
+        <p className="text-[11px] tracking-[0.18em] text-[#9aa4b8]">SYSTEM ONE INVESTMENT LAB</p>
         <p className="text-xs text-[#c9d2e3]">Real market data. Real decisions. Historical experiment.</p>
       </div>
       <nav className="flex flex-wrap items-center justify-end gap-3 text-xs text-[#9aa4b8]">

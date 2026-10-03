@@ -1,6 +1,6 @@
 export const PROMPT_VERSION = "decision_schema_v1"
 export const MODEL = "typesafe-ai/jev"
-export const RUN_ID = "JEV-20260922-V1-PHASE3-TEST"
+export const RUN_ID = "SYSTEMONE-20260922-V1-PHASE3-TEST"
 export const ACTIONS = ["BUY", "HOLD", "SELL", "NO_ACTION"] as const
 export type Action = (typeof ACTIONS)[number]
 

@@ -29,7 +29,7 @@ The four-layer pipeline:
 
 | Layer | Technology | Why this choice |
 | --- | --- | --- |
-| Decision model | **System One** (`typesafe-ai/jev`) via Vercel AI Gateway `POST /v1/evaluate` | System One is TypeSafe's "System One" model: it doesn't generate text — it returns **one typed, calibrated answer per question** (a choice, a probability distribution over options, a confidence). That's exactly right for a decision loop: you get `BUY` + P(BUY)=0.57 + probabilities for all four actions, in ~550 ms, deterministically structured — no JSON parsing of free-form LLM prose |
+| Decision model | **System One** (`System One`) via Vercel AI Gateway `POST /v1/evaluate` | System One is TypeSafe's "System One" model: it doesn't generate text — it returns **one typed, calibrated answer per question** (a choice, a probability distribution over options, a confidence). That's exactly right for a decision loop: you get `BUY` + P(BUY)=0.57 + probabilities for all four actions, in ~550 ms, deterministically structured — no JSON parsing of free-form LLM prose |
 | App framework | Next.js 16 (App Router) + React 19 + TypeScript | The deliverable is a web experience: replay pages, portfolio view, trades, audit pages |
 | Analytics store | **DuckDB** (`@duckdb/node-api`) + Parquet | Single-file embedded OLAP — 38,400 feature rows and 10,299 decision rows with zero infrastructure; also runs server-side in Next.js (`serverExternalPackages` in `next.config.ts`) |
 | Market data | **Yahoo Finance** chart API via `yahoo-finance2` | Free, fast, has NSE (`*.NS`) symbols and the `^CNX100` index. Explicitly treated as *experimental*, not authoritative |

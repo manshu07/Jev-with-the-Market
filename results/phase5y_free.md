@@ -1,6 +1,6 @@
-# 5-year free run (momentum / random / benchmark — Jev off)
+# 5-year free run (momentum / random / benchmark — System One off)
 
-Window: 2021-10-01 to 2026-09-22 (1223 sessions). Initial capital ₹10,00,000 each. Same engine, costs, and execution rules as the 6-month experiment (next-open execution, 10 bps cost, 5 bps slippage, max 5 positions, 20% cap). Jev leg intentionally not called (paid gateway calls — see report).
+Window: 2021-10-01 to 2026-09-22 (1223 sessions). Initial capital ₹10,00,000 each. Same engine, costs, and execution rules as the 6-month experiment (next-open execution, 10 bps cost, 5 bps slippage, max 5 positions, 20% cap). System One leg intentionally not called (paid gateway calls — see report).
 
 ## Results
 
@@ -3004,4 +3004,4 @@ Window: 2021-10-01 to 2026-09-22 (1223 sessions). Initial capital ₹10,00,000 e
 | BRITANNIA | 2021-10-11 | 2021-10-12 | BUY | 3822.91 |
 | JINDALSTEL | 2021-10-11 | 2021-10-12 | BUY | 414.01 |
 
-*Jev leg: not run in this free pass. To add it: scripts/phase4-run.ts with updated paths.ts dates + new EXPERIMENT_ID, AI_GATEWAY_API_KEY required. ~107k calls for 5 years.*
+*System One leg: not run in this free pass. To add it: scripts/phase4-run.ts with updated paths.ts dates + new EXPERIMENT_ID, AI_GATEWAY_API_KEY required. ~107k calls for 5 years.*

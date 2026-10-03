@@ -142,7 +142,7 @@ describe("historical replay engine", () => {
 
     const dataset = await loadReplayDataset(root)
     expect(dataset.mode).toBe("partial")
-    expect(dataset.experiment.id).toBe("JEV-20260922-V2")
+    expect(dataset.experiment.id).toBe("SYSTEMONE-20260922-V2")
     expect(dataset.days[0]?.date).toBe("2026-03-10")
     const lastDate = dataset.days.at(-1)?.date
     expect(lastDate).toBeTruthy()

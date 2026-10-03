@@ -61,7 +61,7 @@ export function AnalysisView({ dataset }: { dataset: ReplayDataset }) {
 
         <section className="grid gap-3 lg:grid-cols-[1.4fr_0.8fr]">
           <div className="rounded-lg border border-white/10 bg-[#0e1626] p-5">
-            <p className="text-[10px] tracking-[0.16em] text-[#9aa4b8]">JEV VS NIFTY 100</p>
+            <p className="text-[10px] tracking-[0.16em] text-[#9aa4b8]">SYSTEM ONE VS NIFTY 100</p>
             <div className="mt-4 grid gap-4 sm:grid-cols-2">
               <div>
                 <p className="text-xs text-[#3ddc97]">System One portfolio</p>
@@ -81,7 +81,7 @@ export function AnalysisView({ dataset }: { dataset: ReplayDataset }) {
                   : "border-[#ff6b6b]/30 bg-[#2a1212]"
               }`}
             >
-              <p className="text-[10px] tracking-[0.16em] text-[#9aa4b8]">DIFFERENCE (JEV − NIFTY 100)</p>
+              <p className="text-[10px] tracking-[0.16em] text-[#9aa4b8]">DIFFERENCE (SYSTEM ONE − NIFTY 100)</p>
               <p
                 className={`mt-1 text-2xl font-semibold ${
                   last.portfolioValue >= last.benchmarkValue ? "text-[#3ddc97]" : "text-[#ff6b6b]"

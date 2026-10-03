@@ -1,5 +1,5 @@
 {
-  "experiment_id": "JEV-20260922-V1",
+  "experiment_id": "SYSTEMONE-20260922-V1",
   "status": "FROZEN",
   "initial_capital": 1000000,
   "start_date": "2026-03-10",
@@ -13,10 +13,10 @@
   "execution": "NEXT_SESSION_OPEN",
   "transaction_cost_bps": 10,
   "slippage_bps": 5,
-  "model": "typesafe-ai/jev",
+  "model": "System One",
   "prompt_version": "decision_schema_v1",
   "benchmark": "NIFTY100_BUY_AND_HOLD",
-  "phase3_run_id": "JEV-20260922-V1-PHASE3-TEST",
+  "phase3_run_id": "SYSTEMONE-20260922-V1-PHASE3-TEST",
   "unavailable_decision_policy": "NO_ACTION",
   "portfolio_rules": {
     "buy_rank": "chosen_action_probability descending, ticker ascending",

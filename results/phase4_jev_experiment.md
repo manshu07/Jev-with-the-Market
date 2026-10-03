@@ -1,27 +1,27 @@
-# Phase 4 Jev experiment
+# Phase 4 System One experiment
 
-Experiment ID: JEV-20260922-V2
+Experiment ID: SYSTEMONE-20260922-V2
 
 This report records what the frozen methodology produced. It does not judge whether the result was good or bad, and it is not an investment recommendation.
 
 ## Experiment configuration
 
-- Status: FROZEN before the first Jev call. The manifest was not edited afterward.
+- Status: FROZEN before the first System One call. The manifest was not edited afterward.
 - Window: 2026-03-10 to 2026-08-31
 - Universe: current NIFTY 100 list from Phase 1. Membership was not changed.
 - Capital: ₹10,00,000. Maximum 5 positions. Purchase notional capped at 20% of the decision-day portfolio value.
 - Buys on names already held do not add shares.
 - Sells are applied before new buys. Execution is the next session open. Marks use the session close.
 - Transaction cost: 10 bps. Slippage: 5 bps.
-- Model: typesafe-ai/jev. Prompt: decision_schema_v1.
-- An unresolved Jev call stops the run. It is not stored and it is not treated as NO_ACTION.
+- Model: System One. Prompt: decision_schema_v1.
+- An unresolved System One call stops the run. It is not stored and it is not treated as NO_ACTION.
 - Benchmark: NIFTY 100 close, scaled so the start date equals ₹10,00,000.
 - Momentum baseline: top 5 decision-ready names by 20-day return, equal weight, same costs and execution. One random baseline, seed 20260922.
 - Price drift after purchase is not trimmed back to 20%.
 
 ## Data quality
 
-Features are the Phase 2 point-in-time set. `close` is used, not `adj_close`. Names that are not decision-ready on a date are not sent to Jev. A held name with no decision that day is left unchanged.
+Features are the Phase 2 point-in-time set. `close` is used, not `adj_close`. Names that are not decision-ready on a date are not sent to System One. A held name with no decision that day is left unchanged.
 
 The universe is the current NIFTY 100, applied backward. That is survivorship bias. It was not corrected during the run.
 
@@ -30,7 +30,7 @@ Yahoo Finance is the price source. One known traded gap remains in that cache: V
 ## Execution summary
 
 - Trading sessions: 118
-- Jev calls stored: 10299
+- System One calls stored: 10299
 - Successful calls: 10299
 - Failed calls: 0
 - Calls with more than one attempt: 752
@@ -56,7 +56,7 @@ Latency is recorded as an operational fact. It is not a score.
 - Momentum baseline return: 0.00%
 - Random baseline final value: ₹10,00,000
 - Random baseline return: 0.00%
-- Difference, Jev minus NIFTY 100: 11.14 percentage points
+- Difference, System One minus NIFTY 100: 11.14 percentage points
 
 ## Decision statistics
 
@@ -66,11 +66,11 @@ Latency is recorded as an operational fact. It is not a score.
 - NO_ACTION: 5479
 - Mean chosen-action probability: 0.701
 
-Chosen-action probability is the probability on the action Jev selected. The raw confidence field is stored separately and is not this number.
+Chosen-action probability is the probability on the action System One selected. The raw confidence field is stored separately and is not this number.
 
 ## BUY analysis
 
-Subsequent close-to-close returns after a BUY decision. These were not available to Jev.
+Subsequent close-to-close returns after a BUY decision. These were not available to System One.
 
 | Horizon | Decisions with a later close | Mean return |
 | --- | ---: | ---: |

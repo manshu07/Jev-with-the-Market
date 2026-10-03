@@ -1,4 +1,4 @@
-# Phase 4 V2 independent audit — JEV-20260922-V2
+# Phase 4 V2 independent audit — SYSTEMONE-20260922-V2
 
 Read-only audit. The live experiment database was copied before reading. Decisions, methodology, and production result files were not modified.
 
@@ -16,7 +16,7 @@ Overall: **PASS**
 
 ## Scope
 
-- Run ID: JEV-20260922-V2
+- Run ID: SYSTEMONE-20260922-V2
 - OK decisions loaded: 10299
 - Sessions audited: 2026-03-10 → 2026-08-31 (118)
 - Executed trades: 19
@@ -29,7 +29,7 @@ Trades are not stored as a table in DuckDB. They were reconstructed from stored 
 
 BUY execution price must equal `OPEN × (1 + 0.0005)`. SELL execution price must equal `OPEN × (1 − 0.0005)`. Execution date must be the next trading session after the decision date.
 
-| Decision | Execution | Ticker | Side | Jev action | P(chosen) | Raw OPEN | Exec price | Expected | Qty | Gross | Cost | Net cash | Timing | Price |
+| Decision | Execution | Ticker | Side | System One action | P(chosen) | Raw OPEN | Exec price | Expected | Qty | Gross | Cost | Net cash | Timing | Price |
 | --- | --- | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- | --- |
 | 2026-03-12 | 2026-03-13 | ITC | BUY | BUY | 0.5700000000000001 | 304 | 304.152 | 304.152 | 656 | 1,99,424 | 199.523712 | -1,99,723.235712 | PASS | PASS |
 | 2026-03-19 | 2026-03-20 | ITC | SELL | SELL | 0.45 | 301.05 | 300.899475 | 300.899475 | 656 | 1,97,488.8 | 197.390056 | 1,97,192.665544 | PASS | PASS |

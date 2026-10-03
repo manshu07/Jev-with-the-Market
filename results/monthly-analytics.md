@@ -4,7 +4,7 @@ Experiment: FREE5Y-MOMENTUM-2021-2026 | Window: 2021-10-01 to 2026-09-22 (1223 s
 
 ## Monthly returns (calendar months over trading sessions)
 
-| Month | Jev | NIFTY 100 | Momentum | Random | Jev - NIFTY (pp) |
+| Month | System One | NIFTY 100 | Momentum | Random | System One - NIFTY (pp) |
 | --- | ---: | ---: | ---: | ---: | ---: |
 | 2021-10 | 12.89% | 0.58% | 12.89% | -8.61% | 12.31 |
 | 2021-11 | -2.61% | -4.77% | -2.61% | -9.22% | 2.15 |
@@ -74,7 +74,7 @@ Experiment: FREE5Y-MOMENTUM-2021-2026 | Window: 2021-10-01 to 2026-09-22 (1223 s
 - momentum: 137.60%
 - random: -92.18%
 
-## Trade holding periods (Jev strategy)
+## Trade holding periods (System One strategy)
 
 - Closed trades: 1427 | Still open: 5
 - Average holding: 4.2 sessions | Median: 2 | Min: 1 | Max: 67

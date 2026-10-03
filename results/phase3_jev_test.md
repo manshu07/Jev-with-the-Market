@@ -1,7 +1,7 @@
-# Phase 3 Jev decision test
+# Phase 3 System One decision test
 
-Run: JEV-20260922-V1-PHASE3-TEST
-Model: typesafe-ai/jev
+Run: SYSTEMONE-20260922-V1-PHASE3-TEST
+Model: System One
 Prompt: decision_schema_v1
 
 This is an integration sample. It is not the six-month portfolio experiment. No profitability was calculated.
@@ -84,7 +84,7 @@ Latency is recorded only so a hung client is visible. It is not a score.
 
 Every successful row has one of BUY, HOLD, SELL, NO_ACTION.
 
-The `confidence` column is the probability Jev assigned to the chosen action. The raw answer also contains its own `confidence` field, which is not that probability. Both are kept. The column was not rewritten.
+The `confidence` column is the probability System One assigned to the chosen action. The raw answer also contains its own `confidence` field, which is not that probability. Both are kept. The column was not rewritten.
 
 The first stored row is the earlier card-block error. The example below is a successful call from this rerun: VEDL on 2026-06-29.
 
@@ -92,7 +92,7 @@ The first stored row is the earlier card-block error. The example below is a suc
 
 ```json
 {
-  "model": "typesafe-ai/jev",
+  "model": "System One",
   "answers": {
     "action": {
       "type": "choice",

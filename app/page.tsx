@@ -173,7 +173,7 @@ export default async function Home() {
               ]}
             />
             <Arrow />
-            <FlowCard title="JEV" items={["Structured decision model", dataset.experiment.model]} accent />
+            <FlowCard title="SYSTEM ONE" items={["Structured decision model", dataset.experiment.model]} accent />
             <Arrow />
             <FlowCard title="DECISION" items={["BUY", "HOLD", "SELL", "NO ACTION"]} />
             <Arrow />
@@ -257,7 +257,7 @@ export default async function Home() {
 
         {/* 6. What System One saw */}
         <section className="rounded-lg border border-white/10 bg-[#0e1626] p-5">
-          <p className="text-[10px] tracking-[0.16em] text-[#9aa4b8]">WHAT INFORMATION DID JEV RECEIVE?</p>
+          <p className="text-[10px] tracking-[0.16em] text-[#9aa4b8]">WHAT INFORMATION DID SYSTEM ONE RECEIVE?</p>
           <p className="mt-2 max-w-3xl text-sm leading-6 text-[#c9d2e3]">
             For each eligible stock on each decision date, System One received structured market context and the live portfolio
             state — only information available as of that session’s close.
@@ -283,7 +283,7 @@ export default async function Home() {
               items={["Current holdings", "Available cash", "Portfolio constraints", "Current position state"]}
             />
             <Arrow />
-            <FlowCard title="JEV DECISION" items={["BUY", "HOLD", "SELL", "NO ACTION"]} accent />
+            <FlowCard title="SYSTEM ONE DECISION" items={["BUY", "HOLD", "SELL", "NO ACTION"]} accent />
           </div>
         </section>
 

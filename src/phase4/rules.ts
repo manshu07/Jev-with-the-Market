@@ -1,4 +1,4 @@
-export const EXPERIMENT_ID = "JEV-20260922-V2"
+export const EXPERIMENT_ID = "SYSTEMONE-20260922-V2"
 export const INITIAL_CAPITAL = 1_000_000
 export const MAX_POSITIONS = 5
 export const MAX_POSITION_WEIGHT = 0.2

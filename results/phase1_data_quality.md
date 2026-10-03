@@ -97,5 +97,5 @@ Yahoo reported 35 split events. Overnight close ratios classify 35 as already sp
 
 ## What this file is not
 
-No features were calculated. No portfolio was simulated. Jev was not called.
+No features were calculated. No portfolio was simulated. System One was not called.
 

@@ -1,7 +1,7 @@
 {
   "mode": "recorded",
   "experiment": {
-    "id": "JEV-20260922-V2",
+    "id": "SYSTEMONE-20260922-V2",
     "startDate": "2026-03-10",
     "endDate": "2026-08-31",
     "initialCapital": 1000000,
@@ -11,7 +11,7 @@
     "execution": "NEXT_OPEN",
     "transactionCost": 0.001,
     "slippage": 0.0005,
-    "model": "typesafe-ai/jev",
+    "model": "System One",
     "promptVersion": "decision_schema_v1"
   },
   "days": [

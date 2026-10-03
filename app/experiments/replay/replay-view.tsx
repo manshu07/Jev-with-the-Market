@@ -184,7 +184,7 @@ export function ReplayView({ dataset }: { dataset: ReplayDataset }) {
                 <span className="text-[11px] text-[#9aa4b8]">Stocks evaluated</span>
               </p>
             </div>
-            <Card title="JEV">
+            <Card title="SYSTEM ONE">
               <p className="text-xl font-medium">{statusCopy(stage, day.stocksEvaluated)}</p>
               <p className="mt-1 text-xs text-[#c9d2e3]">
                 Decision: {day.date} EOD · Execution: {nextDate ? `${nextDate} OPEN` : "none in this replay"}
@@ -363,7 +363,7 @@ function Finale({ dataset, onReplay, onTrades }: { dataset: ReplayDataset; onRep
 
       <section className="mt-6 grid gap-3 lg:grid-cols-[1.2fr_1fr_0.8fr]">
         <div className="rounded-lg border border-white/10 bg-[#0e1626] p-5">
-          <p className="text-[10px] tracking-[0.16em] text-[#9aa4b8]">JEV VS NIFTY 100</p>
+          <p className="text-[10px] tracking-[0.16em] text-[#9aa4b8]">SYSTEM ONE VS NIFTY 100</p>
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
             <div>
               <p className="text-xs text-[#3ddc97]">System One portfolio</p>
@@ -377,7 +377,7 @@ function Finale({ dataset, onReplay, onTrades }: { dataset: ReplayDataset; onRep
             </div>
           </div>
           <div className={`mt-5 rounded-md border px-4 py-3 ${ahead ? "border-[#3ddc97]/30 bg-[#10261c]" : "border-[#ff6b6b]/30 bg-[#2a1212]"}`}>
-            <p className="text-[10px] tracking-[0.16em] text-[#9aa4b8]">DIFFERENCE (JEV − NIFTY 100)</p>
+            <p className="text-[10px] tracking-[0.16em] text-[#9aa4b8]">DIFFERENCE (SYSTEM ONE − NIFTY 100)</p>
             <p className={`mt-1 text-2xl font-semibold ${ahead ? "text-[#3ddc97]" : "text-[#ff6b6b]"}`}>
               {signedInr(rupeeGap)} · {ppGap >= 0 ? "+" : ""}
               {ppGap.toFixed(2)} percentage points

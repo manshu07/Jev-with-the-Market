@@ -1,6 +1,6 @@
 {
-  "run_id": "JEV-20260922-V1-PHASE3-TEST",
-  "model": "typesafe-ai/jev",
+  "run_id": "SYSTEMONE-20260922-V1-PHASE3-TEST",
+  "model": "System One",
   "prompt_version": "decision_schema_v1",
   "dates": [
     "2026-03-25",

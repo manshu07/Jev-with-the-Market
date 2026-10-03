@@ -77,7 +77,7 @@ export class UnresolvedDecisionError extends Error {
 export function assertNotInterruptedDatabase(path: string) {
   const normalized = path.split(/[/\\]/).join("/")
   if (normalized.endsWith(INTERRUPTED_PHASE4_DB)) {
-    throw new Error("Refusing to open interrupted experiment database JEV-20260922-V1")
+    throw new Error("Refusing to open interrupted experiment database SYSTEMONE-20260922-V1")
   }
 }
 

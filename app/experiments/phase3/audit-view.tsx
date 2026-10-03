@@ -360,7 +360,7 @@ function Detail({ row }: { row: AuditDecision }) {
       </div>
 
       <details className="rounded-md border border-white/10 bg-[#0b1220] p-3">
-        <summary className="cursor-pointer text-[10px] tracking-[0.16em] text-[#7eb6ff]">2. RAW JEV RESPONSE</summary>
+        <summary className="cursor-pointer text-[10px] tracking-[0.16em] text-[#7eb6ff]">2. RAW SYSTEM ONE RESPONSE</summary>
         <pre className="mt-3 max-h-64 overflow-auto text-xs leading-5 text-[#c9d2e3]">{JSON.stringify(row.raw, null, 2)}</pre>
       </details>
 
