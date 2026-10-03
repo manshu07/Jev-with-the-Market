@@ -291,7 +291,7 @@ export function ReplayView({ dataset }: { dataset: ReplayDataset }) {
             </Card>
             <Card title="PORTFOLIO VS NIFTY 100">
               <div className="mb-1 flex justify-between text-[11px]">
-                <span className="text-[#3ddc97]">Jev portfolio {signedPct(returnFrom(dataset.experiment.initialCapital, chart.at(-1)?.portfolio ?? dataset.experiment.initialCapital))}</span>
+                <span className="text-[#3ddc97]">System One portfolio {signedPct(returnFrom(dataset.experiment.initialCapital, chart.at(-1)?.portfolio ?? dataset.experiment.initialCapital))}</span>
                 <span className="text-[#7eb6ff]">NIFTY 100 {signedPct(returnFrom(dataset.experiment.initialCapital, chart.at(-1)?.benchmark ?? dataset.experiment.initialCapital))}</span>
               </div>
               <div className="h-36 min-w-0">
@@ -302,7 +302,7 @@ export function ReplayView({ dataset }: { dataset: ReplayDataset }) {
                     <YAxis hide domain={["auto", "auto"]} />
                     <Tooltip contentStyle={{ background: "#0e1626", border: "1px solid #243049", fontSize: 12 }} />
                     <Legend wrapperStyle={{ fontSize: 11 }} />
-                    <Line type="monotone" dataKey="portfolio" name="Jev portfolio" stroke="#3ddc97" dot={false} strokeWidth={2} />
+                    <Line type="monotone" dataKey="portfolio" name="System One portfolio" stroke="#3ddc97" dot={false} strokeWidth={2} />
                     <Line type="monotone" dataKey="benchmark" name="NIFTY 100" stroke="#7eb6ff" dot={false} strokeWidth={2} />
                     <ReferenceLine x={chart.at(-1)?.date} stroke="#f4f1ea" strokeDasharray="3 3" />
                   </LineChart>
@@ -366,7 +366,7 @@ function Finale({ dataset, onReplay, onTrades }: { dataset: ReplayDataset; onRep
           <p className="text-[10px] tracking-[0.16em] text-[#9aa4b8]">JEV VS NIFTY 100</p>
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
             <div>
-              <p className="text-xs text-[#3ddc97]">Jev portfolio</p>
+              <p className="text-xs text-[#3ddc97]">System One portfolio</p>
               <p className="mt-1 text-3xl font-semibold tracking-tight">{inr(last.portfolioValue)}</p>
               <p className="mt-1 text-sm text-[#3ddc97]">{signedPct(jev)}</p>
             </div>
@@ -384,8 +384,8 @@ function Finale({ dataset, onReplay, onTrades }: { dataset: ReplayDataset; onRep
             </p>
             <p className="mt-1 text-xs text-[#c9d2e3]">
               {ahead
-                ? `Jev finished ${inr(Math.abs(rupeeGap))} ahead of buy-and-hold NIFTY 100.`
-                : `Jev finished ${inr(Math.abs(rupeeGap))} behind buy-and-hold NIFTY 100.`}
+                ? `System One finished ${inr(Math.abs(rupeeGap))} ahead of buy-and-hold NIFTY 100.`
+                : `System One finished ${inr(Math.abs(rupeeGap))} behind buy-and-hold NIFTY 100.`}
             </p>
           </div>
         </div>
@@ -415,7 +415,7 @@ function Finale({ dataset, onReplay, onTrades }: { dataset: ReplayDataset; onRep
         <div className="mb-2 flex flex-wrap items-end justify-between gap-2">
           <p className="text-[10px] tracking-[0.16em] text-[#9aa4b8]">EQUITY CURVE</p>
           <p className="text-[11px] text-[#9aa4b8]">
-            <span className="text-[#3ddc97]">● Jev</span>
+            <span className="text-[#3ddc97]">● System One</span>
             {"  "}
             <span className="text-[#7eb6ff]">● NIFTY 100</span>
           </p>
@@ -428,7 +428,7 @@ function Finale({ dataset, onReplay, onTrades }: { dataset: ReplayDataset; onRep
               <YAxis tick={{ fill: "#9aa4b8", fontSize: 11 }} width={72} />
               <Tooltip contentStyle={{ background: "#0e1626", border: "1px solid #243049" }} />
               <Legend />
-              <Line type="monotone" dataKey="portfolio" name="Jev portfolio" stroke="#3ddc97" dot={false} strokeWidth={2} />
+              <Line type="monotone" dataKey="portfolio" name="System One portfolio" stroke="#3ddc97" dot={false} strokeWidth={2} />
               <Line type="monotone" dataKey="benchmark" name="NIFTY 100" stroke="#7eb6ff" dot={false} strokeWidth={2} />
             </LineChart>
           </ResponsiveContainer>
@@ -472,7 +472,7 @@ function Finale({ dataset, onReplay, onTrades }: { dataset: ReplayDataset; onRep
 
 function statusCopy(stage: ReplayStage, stocks: number): string {
   if (stage === 0) return "Loading market state..."
-  if (stage === 1) return `Jev is analyzing ${stocks} stocks...`
+  if (stage === 1) return `System One is analyzing ${stocks} stocks...`
   if (stage === 2) return "Decisions ready"
   if (stage === 3) return "Decisions ready for execution"
   return "Portfolio updated"

@@ -101,7 +101,7 @@ export function ExperimentAuditView({
         <p className="text-[10px] tracking-[0.16em] text-[#9aa4b8]">EXPERIMENT AUDIT</p>
         <h1 className="mt-2 text-3xl font-semibold tracking-tight">{meta.runId}</h1>
         <p className="mt-2 max-w-3xl text-sm leading-6 text-[#c9d2e3]">
-          Read-only inspection of stored Jev calls from the live experiment. Pick a session date, then open a ticker to
+          Read-only inspection of stored System One calls from the live experiment. Pick a session date, then open a ticker to
           see the market/portfolio input and the raw response.
         </p>
         <div className="mt-4 grid gap-2 text-xs text-[#9aa4b8] sm:grid-cols-3">
@@ -109,7 +109,7 @@ export function ExperimentAuditView({
             <span className="text-[#7eb6ff]">1. Input</span> — point-in-time market + portfolio state
           </p>
           <p>
-            <span className="text-[#7eb6ff]">2. Jev</span> — {meta.model ?? "—"} · {meta.promptVersion ?? "—"}
+            <span className="text-[#7eb6ff]">2. System One</span> — {meta.model ?? "—"} · {meta.promptVersion ?? "—"}
           </p>
           <p>
             <span className="text-[#7eb6ff]">3. Output</span> — action, probabilities, confidence fields

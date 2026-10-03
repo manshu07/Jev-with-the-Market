@@ -120,11 +120,11 @@ export default async function Home() {
           <p className="text-[10px] tracking-[0.16em] text-[#3ddc97]">WHY THIS EXPERIMENT?</p>
           <div className="mt-3 max-w-3xl space-y-4 text-sm leading-6 text-[#c9d2e3]">
             <p>
-              Jev is a new class of AI model designed to make structured decisions rather than generate traditional text.
+              System One is a new class of AI model designed to make structured decisions rather than generate traditional text.
             </p>
             <p>I wanted to test a simple question:</p>
             <p className="rounded-md border border-white/10 bg-[#0b1220] px-4 py-3 text-[#f4f1ea]">
-              “How good is Jev at making difficult decisions when given a large amount of context, a defined set of
+              “How good is System One at making difficult decisions when given a large amount of context, a defined set of
               choices, and real constraints?”
             </p>
             <p>Stock investing is a useful test case because decisions are:</p>
@@ -181,7 +181,7 @@ export default async function Home() {
           </div>
           <div className="mt-5 grid gap-2 text-sm text-[#c9d2e3] sm:grid-cols-2">
             {[
-              "Can Jev make decisions repeatedly rather than answer a single question?",
+              "Can System One make decisions repeatedly rather than answer a single question?",
               "Can it make decisions while respecting portfolio constraints?",
               "Can it incorporate changing market and portfolio context?",
               "Can it decide when to enter and exit positions?",
@@ -194,7 +194,7 @@ export default async function Home() {
             ))}
           </div>
           <p className="mt-4 rounded-md border border-white/10 bg-[#0b1220] px-4 py-3 text-sm leading-6 text-[#c9d2e3]">
-            The experiment evaluates the quality and behavior of the decisions produced by Jev. Portfolio return is an
+            The experiment evaluates the quality and behavior of the decisions produced by System One. Portfolio return is an
             outcome of the simulation, not the sole definition of decision quality.
           </p>
         </section>
@@ -229,7 +229,7 @@ export default async function Home() {
           </p>
           <ul className="mt-4 grid gap-2 text-sm text-[#c9d2e3] sm:grid-cols-2">
             {[
-              "Jev evaluates eligible stocks at EOD.",
+              "System One evaluates eligible stocks at EOD.",
               "BUY on an unheld stock can initiate a position.",
               "BUY on an already-held stock does not add shares.",
               "HOLD maintains the existing state.",
@@ -252,14 +252,14 @@ export default async function Home() {
               </li>
             ))}
           </ul>
-          <p className="mt-4 text-xs text-[#9aa4b8]">No future market information is supplied to Jev for a decision.</p>
+          <p className="mt-4 text-xs text-[#9aa4b8]">No future market information is supplied to System One for a decision.</p>
         </section>
 
-        {/* 6. What Jev saw */}
+        {/* 6. What System One saw */}
         <section className="rounded-lg border border-white/10 bg-[#0e1626] p-5">
           <p className="text-[10px] tracking-[0.16em] text-[#9aa4b8]">WHAT INFORMATION DID JEV RECEIVE?</p>
           <p className="mt-2 max-w-3xl text-sm leading-6 text-[#c9d2e3]">
-            For each eligible stock on each decision date, Jev received structured market context and the live portfolio
+            For each eligible stock on each decision date, System One received structured market context and the live portfolio
             state — only information available as of that session’s close.
           </p>
           <div className="mt-4 grid gap-3 md:grid-cols-[1fr_auto_1fr_auto_1fr] md:items-center">
@@ -296,7 +296,7 @@ export default async function Home() {
             <span className="text-[#3ddc97]">{inr(portfolio, 2)}</span>
           </div>
           <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
-            <Stat label="Jev simulated return" value={pct(jevReturn)} accent />
+            <Stat label="System One simulated return" value={pct(jevReturn)} accent />
             <Stat label="NIFTY 100" value={pct(niftyReturn)} />
             <Stat label="Trades" value={String(trades)} />
             <Stat label="Successful decisions" value={V2_AUDIT.successfulDecisions.toLocaleString("en-IN")} />
@@ -304,7 +304,7 @@ export default async function Home() {
           </div>
           <p className="mt-5 max-w-3xl text-sm leading-6 text-[#c9d2e3]">
             The result surprised me — but the return is not the experiment’s only output. The more interesting question is
-            what Jev actually decided, when it decided it, and why those decisions produced this portfolio path.
+            what System One actually decided, when it decided it, and why those decisions produced this portfolio path.
           </p>
         </section>
 
@@ -357,7 +357,7 @@ export default async function Home() {
         <section className="rounded-lg border border-[#e4c36a]/30 bg-[#0e1626] p-5">
           <p className="text-[10px] tracking-[0.16em] text-[#f6d98a]">IMPORTANT LIMITATIONS</p>
           <p className="mt-2 text-sm text-[#c9d2e3]">
-            This is an experiment, not evidence that Jev can reliably outperform the market.
+            This is an experiment, not evidence that System One can reliably outperform the market.
           </p>
           <ul className="mt-4 space-y-2 text-sm text-[#c9d2e3]">
             {[
@@ -386,7 +386,7 @@ export default async function Home() {
               title="1. REPLAY"
               lead="Watch the experiment unfold session by session."
               points={[
-                "Jev’s decisions",
+                "System One’s decisions",
                 "portfolio state",
                 "holdings",
                 "cash",
@@ -425,7 +425,7 @@ export default async function Home() {
                 "decision probabilities",
                 "selected stocks",
                 "timing",
-                "patterns in Jev’s decisions",
+                "patterns in System One’s decisions",
                 "portfolio behavior",
               ]}
             />
@@ -447,7 +447,7 @@ export default async function Home() {
             <p>The Overview tells you WHAT happened.</p>
             <p>Replay shows you HOW it happened.</p>
             <p>Portfolio shows you WHERE the money moved.</p>
-            <p>Trades shows you WHAT Jev actually did.</p>
+            <p>Trades shows you WHAT System One actually did.</p>
             <p>Analysis helps understand WHY the decisions matter.</p>
             <p>Audit checks WHETHER the result is internally consistent.</p>
           </div>

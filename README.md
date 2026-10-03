@@ -1,44 +1,44 @@
-# Jev Meets the Market
+# AI Meets the Market
 
-### An experiment in using Jev for sequential investment decisions
+### An experiment in using System One for sequential investment decisions
 
 [**Try the experiment →**](https://jevstock.vercel.app/experiments/replay)
 
-[**View the source →**](https://github.com/jai2010/Jev-Meets-the-Market)
+[**View the source →**](https://github.com/jai2010/System One-Meets-the-Market)
 
 ---
 
 ## The experiment
 
-Everyone seems to be building something with Jev.
+Everyone seems to be building something with System One.
 
 So here's mine.
 
-I wanted to see what happens when you put **Jev, a probabilistic decision model, into a domain as complex and uncertain as investing.**
+I wanted to see what happens when you put **System One, a probabilistic decision model, into a domain as complex and uncertain as investing.**
 
 I'm not particularly good with stocks. That's actually what made this interesting to me.
 
 The question wasn't:
 
-> Can Jev predict which stock will go up?
+> Can System One predict which stock will go up?
 
 It was:
 
-> **Can Jev actually make useful investment decisions when it has to make a sequence of decisions and live with the consequences of those decisions?**
+> **Can System One actually make useful investment decisions when it has to make a sequence of decisions and live with the consequences of those decisions?**
 
-So I gave Jev **₹10 lakh** and the **NIFTY 100** universe and let it run.
+So I gave System One **₹10 lakh** and the **NIFTY 100** universe and let it run.
 
 ---
 
 ## Watch the experiment
 
-[**▶ Watch the Jev experiment recording**](https://github.com/user-attachments/assets/79b6de38-3aeb-485c-9eae-dace14724fd7)
+[**▶ Watch the System One experiment recording**](https://github.com/user-attachments/assets/79b6de38-3aeb-485c-9eae-dace14724fd7)
 
 ---
 
 ## How it works
 
-At the end of each trading day, Jev evaluates eligible stocks and makes one of four decisions:
+At the end of each trading day, System One evaluates eligible stocks and makes one of four decisions:
 
 - **BUY** — initiate a position
 - **HOLD** — maintain the current position
@@ -62,7 +62,7 @@ Transaction costs and slippage are included in the simulation.
 
 The result was pretty interesting.
 
-| | Jev | NIFTY 100 |
+| | System One | NIFTY 100 |
 |---|---:|---:|
 | Starting capital | ₹10,00,000 | ₹10,00,000 |
 | Ending value | **₹11,22,525** | ₹10,11,109 |
@@ -70,11 +70,11 @@ The result was pretty interesting.
 | Max drawdown | **-3.65%** | — |
 | Trading sessions | 118 | 118 |
 
-Jev finished the experiment at **₹11.23 lakh**, compared with **₹10.11 lakh** for a NIFTY 100 buy-and-hold portfolio.
+System One finished the experiment at **₹11.23 lakh**, compared with **₹10.11 lakh** for a NIFTY 100 buy-and-hold portfolio.
 
 I was genuinely surprised by the result.
 
-Not because I think six months of results proves that Jev can beat the market. It doesn't.
+Not because I think six months of results proves that System One can beat the market. It doesn't.
 
 The sample is too short, there are known data limitations, and the experiment has survivorship bias.
 
@@ -92,7 +92,7 @@ The return is actually not the part I'm most interested in.
 
 I want to understand:
 
-- Why did Jev buy a particular stock?
+- Why did System One buy a particular stock?
 - Why did it ignore another?
 - Why did it sell when it did?
 - How confident was it?
@@ -102,7 +102,7 @@ I want to understand:
 
 Every decision is recorded, so the experiment can be replayed and inspected.
 
-The goal is to understand not just **what Jev did**, but **how it behaves as a decision-maker**.
+The goal is to understand not just **what System One did**, but **how it behaves as a decision-maker**.
 
 ---
 
@@ -115,7 +115,7 @@ Market data
      ↓
 Point-in-time features
      ↓
-Jev evaluates the stock
+System One evaluates the stock
      ↓
 BUY / HOLD / SELL / NO_ACTION
      ↓
@@ -164,8 +164,8 @@ It is not:
 - Financial advice
 - A production trading strategy
 - An automated brokerage system
-- Proof that Jev can predict markets
-- Proof that Jev can outperform the market
+- Proof that System One can predict markets
+- Proof that System One can outperform the market
 - A claim about future investment returns
 
 I also do **not** claim that this prototype is scalable to real-time trading.
@@ -223,9 +223,9 @@ That creates a feedback loop:
 
 **Observe → Decide → Act → Evaluate**
 
-Can Jev operate meaningfully inside that loop?
+Can System One operate meaningfully inside that loop?
 
-That's what **Can Jev Invest?** is trying to explore.
+That's what **Can System One Invest?** is trying to explore.
 
 ---
 
@@ -250,8 +250,8 @@ The goal is to understand whether there is something interesting underneath the 
 ## Run it yourself
 
 ```bash
-git clone https://github.com/jai2010/Jev-Meets-the-Market.git
-cd Jev-Meets-the-Market
+git clone https://github.com/jai2010/System One-Meets-the-Market.git
+cd System One-Meets-the-Market
 
 npm install
 npm run dev
@@ -267,7 +267,7 @@ http://localhost:3000
 
 ## Stack
 
-- **Jev** — probabilistic decision model
+- **System One** — probabilistic decision model
 - **Next.js**
 - **TypeScript**
 - **DuckDB**
@@ -278,7 +278,7 @@ http://localhost:3000
 
 ## Experiment details
 
-**Experiment:** Can Jev Invest?
+**Experiment:** Can System One Invest?
 
 **Capital:** ₹10,00,000
 
@@ -312,10 +312,10 @@ The experiment is intended to explore AI decision-making, not to provide an inve
 
 🌐 **[Run the experiment](https://jevstock.vercel.app/)**
 
-💻 **[GitHub repository](https://github.com/jai2010/Jev-Meets-the-Market)**
+💻 **[GitHub repository](https://github.com/jai2010/System One-Meets-the-Market)**
 
 ---
 
-**Can Jev invest?**
+**Can System One invest?**
 
 That's what I'm trying to find out.

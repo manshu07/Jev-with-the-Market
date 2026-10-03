@@ -1,8 +1,8 @@
-# Jev-with-the-Market — 5-Year Experiment Report
+# System One-with-the-Market — 5-Year Experiment Report
 
-**Repo:** `github.com/manshu07/Jev-with-the-Market` · **Branch:** `5yr-experiment` · **Window:** 2021-10-01 → 2026-09-22 (1,223 trading sessions)
+**Repo:** `github.com/manshu07/System One-with-the-Market` · **Branch:** `5yr-experiment` · **Window:** 2021-10-01 → 2026-09-22 (1,223 trading sessions)
 
-**Prepared for:** Himanshu. Covers the 5-year extension of the "Can Jev Invest?" experiment: data, repairs, monthly returns, trade holding periods, and the Jev decision-model status.
+**Prepared for:** Himanshu. Covers the 5-year extension of the "Can System One Invest?" experiment: data, repairs, monthly returns, trade holding periods, and the System One decision-model status.
 
 **Verification basis:** every number below comes from scripts executed on this machine against the downloaded Yahoo Finance cache and the repo's own simulation engine. Evidence files: `results/phase5y_free.md`, `results/monthly-analytics.{md,json}`, `results/nse-repairs.{md,json}`, `results/phase1_data_quality.md`.
 
@@ -18,7 +18,7 @@
 
 - Momentum beat the index in **30 of 60 months** and was positive in 28/60 — the edge is real but concentrated: 2022 **+44.2%** and 2023 **+33.5%** did the heavy lifting; 2025 was **−11.8%** and 2026 (9 months) −4.7%.
 - **Trade holding periods:** average **4.2 sessions**, median **2**, min 1, max 67. 1,129 of 1,427 closed trades lasted ≤5 sessions. This is a fast-churn system — and the random leg proves what churn costs when there is no signal: **−92%**.
-- The **Jev** decision-model leg is wired, smoke-proven on 5-year data (12/12 live calls, 118 ms mean), and awaiting a spending decision: ~96,000 paid gateway calls for the full run.
+- The **System One** decision-model leg is wired, smoke-proven on 5-year data (12/12 live calls, 118 ms mean), and awaiting a spending decision: ~96,000 paid gateway calls for the full run.
 
 ---
 
@@ -30,8 +30,8 @@
 | 2. Features | `npm run features` — 29 point-in-time indicators per stock-day | 158,500 rows; decision-ready counts below |
 | 3. Data repair | **Found Yahoo serving flat placeholder bars for 96/100 stocks on 2025-03-18** (live re-fetch proved it persists; NSE's official bhavcopy shows a fully traded session). Built `scripts/repair-from-bhavcopy.ts` | **118 symbol-days patched** from official NSE bhavcopy (incl. VEDL 2026-04-30 −65% bad print); 10 unreparable (symbol absent from bhavcopy EQ series) honestly logged |
 | 4. Rebuild | `npm run features` after repairs | Decision-ready rows: **95,499 → 122,328** (+28%). The 2025-03-18 poison had made every 200/252-session window null for ~a year — dead zone fully healed (93–98 ready tickers every month) |
-| 5. 5y simulation | `scripts/run-5y-free.ts` — repo's own engine (next-open execution, 10 bps cost, 5 bps slippage, max 5 positions, 20% cap), Jev leg off | Full 1,223-session run + monthly/holding analytics |
-| 6. Jev smoke | `scripts/jev-smoke-5y.ts` — live TypeSafe API calls on 5y features, repo's exact prompt | **12/12 OK**, mean 118 ms, sane calibrated decisions (BUY 0.54–0.91, NO_ACTION 0.62–0.72) |
+| 5. 5y simulation | `scripts/run-5y-free.ts` — repo's own engine (next-open execution, 10 bps cost, 5 bps slippage, max 5 positions, 20% cap), System One leg off | Full 1,223-session run + monthly/holding analytics |
+| 6. System One smoke | `scripts/jev-smoke-5y.ts` — live TypeSafe API calls on 5y features, repo's exact prompt | **12/12 OK**, mean 118 ms, sane calibrated decisions (BUY 0.54–0.91, NO_ACTION 0.62–0.72) |
 
 **Benchmark-gap handling:** 6 of 1,229 sessions have a missing/invalid NIFTY 100 index bar while stocks traded (2022-12-26, 2024-01-01, 2024-02-19, 2025-01-01, 2025-02-01, 2026-01-01). Following the repo's no-guessing philosophy, those sessions are **excluded and disclosed**, not interpolated.
 
@@ -77,17 +77,17 @@ From the complete momentum ledger (1,432 trades, 1,427 closed):
 
 **Proves:** the pipeline scales to 5 years unchanged (phase separation paid off — only config + one repair script were needed); momentum on the current NIFTY 100 with realistic costs earned +137.6% over 5 years vs +37.6% buy-and-hold; Yahoo Finance needs an official-source repair layer for NSE (documented artifact class + working fix).
 
-**Doesn't prove:** forward returns (survivorship bias — today's NIFTY 100 applied backward — flatters momentum more than the index because past winners are exactly the stocks that entered the index); Jev's edge (that run hasn't happened yet — below); investability of a −47.9% max drawdown strategy at 10bps/5bps flat costs.
+**Doesn't prove:** forward returns (survivorship bias — today's NIFTY 100 applied backward — flatters momentum more than the index because past winners are exactly the stocks that entered the index); System One's edge (that run hasn't happened yet — below); investability of a −47.9% max drawdown strategy at 10bps/5bps flat costs.
 
 ---
 
-## 6. The Jev leg — decision needed
+## 6. The System One leg — decision needed
 
 | | Detail |
 | --- | --- |
 | Status | Code path fully wired (`scripts/phase4-run.ts`, resume-safe, checkpointed); smoke-proven live on 5-year data (12/12 calls OK, 118 ms) |
 | Cost | ~122k sessions × ~95 eligible stocks ≈ **96,000 calls** to the Vercel AI Gateway (`typesafe-ai/jev`) — paid; no gateway key on this box yet |
 | Time | ~16 h serial, ~4–5 h at concurrency 4 (backoff/retry machinery already built) |
-| To start | Provide `AI_GATEWAY_API_KEY` → I set the new experiment id, run Phase 4, and this report gains the Jev column + Jev-specific trade holding stats |
+| To start | Provide `AI_GATEWAY_API_KEY` → I set the new experiment id, run Phase 4, and this report gains the System One column + System One-specific trade holding stats |
 
 *Not financial advice. Experimental backtest on repaired Yahoo/NSE daily data; flat cost assumptions; survivorship bias disclosed above.*

@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Jev Investment Lab",
+  title: "System One Investment Lab",
   description: "Point-in-time NIFTY 100 investment experiment with historical replay.",
 };
 

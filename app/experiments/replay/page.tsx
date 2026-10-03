@@ -3,8 +3,8 @@ import { ReplayView } from "./replay-view"
 import { loadReplayDataset } from "@/src/replay/load"
 
 export const metadata: Metadata = {
-  title: "Jev Investment Lab — Historical Replay",
-  description: "Historical replay of the Jev investment experiment. No live decisions.",
+  title: "System One Investment Lab — Historical Replay",
+  description: "Historical replay of the System One investment experiment. No live decisions.",
 }
 
 export const dynamic = "force-dynamic"

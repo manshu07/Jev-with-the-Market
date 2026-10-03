@@ -4,8 +4,8 @@ import { loadExperimentAuditDay, loadExperimentAuditMeta } from "@/src/audit/loa
 import { ExperimentAuditView } from "./audit-view"
 
 export const metadata: Metadata = {
-  title: "Decision Audit — Jev Investment Lab",
-  description: "Read-only audit of stored experiment Jev inputs and responses.",
+  title: "Decision Audit — System One Investment Lab",
+  description: "Read-only audit of stored experiment System One inputs and responses.",
 }
 
 export const dynamic = "force-dynamic"

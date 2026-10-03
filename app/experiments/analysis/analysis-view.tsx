@@ -64,7 +64,7 @@ export function AnalysisView({ dataset }: { dataset: ReplayDataset }) {
             <p className="text-[10px] tracking-[0.16em] text-[#9aa4b8]">JEV VS NIFTY 100</p>
             <div className="mt-4 grid gap-4 sm:grid-cols-2">
               <div>
-                <p className="text-xs text-[#3ddc97]">Jev portfolio</p>
+                <p className="text-xs text-[#3ddc97]">System One portfolio</p>
                 <p className="mt-1 text-3xl font-semibold">{inr(last.portfolioValue)}</p>
                 <p className="mt-1 text-sm text-[#3ddc97]">{pct(jevReturn)}</p>
               </div>
@@ -93,7 +93,7 @@ export function AnalysisView({ dataset }: { dataset: ReplayDataset }) {
                 points
               </p>
               <p className="mt-1 text-xs text-[#c9d2e3]">
-                Jev finished {inr(Math.abs(last.portfolioValue - last.benchmarkValue))}{" "}
+                System One finished {inr(Math.abs(last.portfolioValue - last.benchmarkValue))}{" "}
                 {last.portfolioValue >= last.benchmarkValue ? "ahead of" : "behind"} buy-and-hold NIFTY 100, across{" "}
                 {tradeCount(dataset)} trades.
               </p>
@@ -122,7 +122,7 @@ export function AnalysisView({ dataset }: { dataset: ReplayDataset }) {
                 <YAxis hide domain={["auto", "auto"]} />
                 <Tooltip contentStyle={{ background: "#0e1626", border: "1px solid #243049", fontSize: 12 }} />
                 <Legend wrapperStyle={{ fontSize: 11 }} />
-                <Line type="monotone" dataKey="portfolio" name="Jev portfolio" stroke="#3ddc97" dot={false} strokeWidth={2} />
+                <Line type="monotone" dataKey="portfolio" name="System One portfolio" stroke="#3ddc97" dot={false} strokeWidth={2} />
                 <Line type="monotone" dataKey="benchmark" name="NIFTY 100" stroke="#7eb6ff" dot={false} strokeWidth={2} />
               </LineChart>
             </ResponsiveContainer>
