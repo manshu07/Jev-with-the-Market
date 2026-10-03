@@ -1,0 +1,23 @@
+{
+  "run_id": "SYSTEMONE-5Y-2021-2026-V1",
+  "window": {
+    "start": "2021-10-01",
+    "end": "2026-09-22",
+    "sessions": 1223
+  },
+  "excluded_sessions": [
+    "2022-12-26",
+    "2024-01-01",
+    "2024-02-19",
+    "2025-01-01",
+    "2025-02-01",
+    "2026-01-01"
+  ],
+  "model": "typesafe-ai/jev",
+  "prompt_version": "decision_schema_v1",
+  "decisions_db": "data/processed/phase5y/jev_decisions.duckdb",
+  "feature_dataset_sha256": "2d0ed8dd2c42caa793fc40125ba08e5e0a9b65afd949585211569f08cb4f3ea1",
+  "prompt_sha256": "93cf738fb0d6a0e036f8884a5f15a7a55a0a8a78fa5a5a209c648e53c0e94f5d",
+  "created_at": "2026-10-03T02:38:30.047Z",
+  "manifest_sha256": "1c2824506074fd21ec01ebc2fdd47012e40cc5fdfbbdbbe60d7dc9a9ca398ef0"
+}
