@@ -1,17 +1,17 @@
 # Phase 2 feature quality
 
-Generated: 22/9/2026, 21:46:43
+Generated: 3/10/2026, 07:29:00
 
 Jev was not called. No portfolio was simulated.
 
 ## Coverage
 
 - Stocks: 100
-- Trading sessions: 384
-- Feature rows: 38400
-- Decision-ready rows: 11772
-- First decision-ready date: 2026-03-10
-- Last decision-ready date: 2026-09-22
+- Trading sessions: 1585
+- Feature rows: 158500
+- Decision-ready rows: 122328
+- First decision-ready date: 2021-05-04
+- Last decision-ready date: 2026-09-23
 - Database: `data/processed/market.duckdb`
 
 ## Formulas
@@ -35,33 +35,33 @@ The cached `close` is already split-adjusted as of the Yahoo download. That can 
 
 | Field | Null rows |
 | --- | ---: |
-| return_1d | 691 |
-| return_5d | 1092 |
-| return_20d | 2496 |
-| return_60d | 6494 |
-| rsi_14 | 2881 |
-| volatility_20d | 3488 |
-| volume_ratio_20d | 3387 |
-| distance_from_52w_high | 26628 |
-| drawdown_20d | 3387 |
-| nifty_return_20d | 2200 |
-| relative_return_20d | 2696 |
+| return_1d | 6970 |
+| return_5d | 7371 |
+| return_20d | 8871 |
+| return_60d | 12871 |
+| rsi_14 | 8374 |
+| volatility_20d | 9022 |
+| volume_ratio_20d | 8914 |
+| distance_from_52w_high | 33916 |
+| drawdown_20d | 8914 |
+| nifty_return_20d | 3600 |
+| relative_return_20d | 10401 |
 
 ## Decision-ready distribution
 
 | Field | Min | Median | Max |
 | --- | ---: | ---: | ---: |
-| return_1d | -0.648979 | 0 | 0.122506 |
-| return_5d | -0.630846 | -0.00047 | 0.276057 |
-| return_20d | -0.595115 | 0.00207 | 0.555374 |
-| return_60d | -0.669992 | 0.003178 | 0.85094 |
-| rsi_14 | 14.706642 | 50.446267 | 90.242007 |
-| volatility_20d | 0.005421 | 0.01662 | 0.152312 |
-| volume_ratio_20d | 0.143195 | 0.820897 | 12.570049 |
-| distance_from_52w_high | -0.681698 | -0.153317 | 0 |
-| drawdown_20d | -0.655175 | -0.034677 | 0 |
-| nifty_return_20d | -0.127783 | 0.00448 | 0.088326 |
-| relative_return_20d | -0.673619 | 0.00232 | 0.483022 |
+| return_1d | -0.899434 | 0.000363 | 9.119051 |
+| return_5d | -0.895569 | 0.002862 | 9.407427 |
+| return_20d | -0.893193 | 0.011986 | 9.345793 |
+| return_60d | -0.893694 | 0.036797 | 11.678421 |
+| rsi_14 | 9.74231 | 52.365498 | 99.366238 |
+| volatility_20d | 0.003449 | 0.016092 | 2.059693 |
+| volume_ratio_20d | 0.013597 | 0.8421 | 15.156365 |
+| distance_from_52w_high | -0.906587 | -0.113178 | 0 |
+| drawdown_20d | -0.901319 | -0.030977 | 0 |
+| nifty_return_20d | -0.127783 | 0.00888 | 0.131047 |
+| relative_return_20d | -0.95255 | 0.002934 | 9.345139 |
 
 ## Stocks with no decision-ready session
 
@@ -77,7 +77,43 @@ These are closes that passed the bar check and moved at least 20% versus the pri
 
 | Date | Ticker | Close | 1-day return | Volume |
 | --- | --- | ---: | ---: | ---: |
+| 2025-03-18 | BAJFINANCE | 8682.5 | 9.119051 | 1103110 |
+| 2025-03-18 | KOTAKBANK | 2034 | 4.102604 | 5384288 |
+| 2024-01-15 | SHRIRAMFIN | 2319.55 | 4.058335 | 556738 |
+| 2025-03-18 | ADANIPOWER | 516.15 | 4.048415 | 2910834 |
+| 2024-01-15 | MAZDOCK | 2347.4 | 1.04794 | 2174201 |
+| 2025-03-18 | HDFCAMC | 3827.6 | 1.043212 | 416479 |
+| 2025-03-18 | HDFCBANK | 1732.2 | 1.025491 | 10953589 |
+| 2025-03-18 | NESTLEIND | 2202.05 | 1.025479 | 423776 |
+| 2025-03-18 | PIDILITIND | 2729.15 | 0.985631 | 288689 |
+| 2025-03-19 | BAJFINANCE | 873.16 | -0.899434 | 12898200 |
+| 2025-03-19 | KOTAKBANK | 404.31 | -0.801224 | 26691440 |
+| 2024-01-16 | SHRIRAMFIN | 461.94 | -0.800849 | 6647950 |
+| 2025-03-19 | ADANIPOWER | 104.2 | -0.798121 | 18174890 |
+| 2025-03-18 | SIEMENS | 5107.6 | 0.762643 | 259115 |
 | 2026-04-30 | VEDL | 271.55 | -0.648979 | 73870853 |
+| 2025-03-18 | MOTHERSON | 125.38 | 0.554426 | 11974671 |
+| 2024-01-15 | MOTHERSON | 109.65 | 0.531425 | 24152334 |
+| 2024-01-16 | MAZDOCK | 1163 | -0.504558 | 8391410 |
+| 2025-03-19 | NESTLEIND | 1092 | -0.504098 | 845086 |
+| 2025-03-19 | PIDILITIND | 1365.925 | -0.499505 | 484702 |
+| 2025-03-19 | HDFCBANK | 872.05 | -0.496565 | 15221406 |
+| 2025-03-19 | HDFCAMC | 1987.875 | -0.480647 | 813080 |
+| 2025-03-19 | SIEMENS | 3066.7788 | -0.399566 | 855208 |
+| 2024-01-16 | MOTHERSON | 72.9 | -0.335157 | 28529832 |
+| 2025-03-19 | MOTHERSON | 86.0067 | -0.314032 | 14779144 |
+| 2022-01-14 | MOTHERSON | 82.4667 | 0.285503 | 100740235 |
+| 2023-02-01 | ADANIENT | 2135.3501 | -0.28197 | 13525314 |
+| 2023-02-02 | ADANIENT | 1565.25 | -0.266982 | 34474080 |
+| 2024-05-21 | HINDZINC | 741.3 | 0.256015 | 15462688 |
+| 2024-06-04 | RECLTD | 452.2 | -0.251944 | 103902126 |
+| 2024-06-04 | PFC | 426.75 | -0.230804 | 108815947 |
+| 2024-11-21 | ADANIENT | 2183.6499 | -0.226068 | 21796668 |
+| 2021-05-12 | GODREJCP | 872.85 | 0.218724 | 27379767 |
+| 2024-11-29 | ADANIGREEN | 1323.9 | 0.217715 | 23771119 |
+| 2024-06-04 | ADANIPORTS | 1248.95 | -0.211497 | 52109624 |
+| 2021-10-13 | TMPV | 506.9 | 0.204467 | 197949387 |
+| 2023-02-08 | ADANIENT | 2164.25 | 0.200394 | 19173006 |
 
 ## Validation
 
@@ -87,17 +123,17 @@ Validation recomputes each row from prices on or before that date, then recomput
 
 ## Sample rows
 
-### RELIANCE 2025-03-03 decision_ready=false
+### RELIANCE 2020-05-04 decision_ready=false
 
 ```json
 {
-  "date": "2025-03-03",
+  "date": "2020-05-04",
   "ticker": "RELIANCE",
-  "open": 1204,
-  "high": 1206.45,
-  "low": 1156,
-  "close": 1171.25,
-  "volume": 17944938,
+  "open": 658.3196,
+  "high": 669.7487,
+  "low": 648.0104,
+  "close": 656.1252,
+  "volume": 53456868,
   "return_1d": null,
   "return_5d": null,
   "return_20d": null,
@@ -124,76 +160,76 @@ Validation recomputes each row from prices on or before that date, then recomput
 }
 ```
 
-### RELIANCE 2026-03-25 decision_ready=true
+### RELIANCE 2021-05-04 decision_ready=true
 
 ```json
 {
-  "date": "2026-03-25",
+  "date": "2021-05-04",
   "ticker": "RELIANCE",
-  "open": 1420,
-  "high": 1430.5,
-  "low": 1408.4,
-  "close": 1413.1,
-  "volume": 19041331,
-  "return_1d": 0.0009208103130755596,
-  "return_5d": 0.0035508841701583638,
-  "return_20d": -0.010988241881298988,
-  "return_60d": -0.09370189840944088,
-  "sma_20": 1396.2499999999995,
-  "sma_50": 1415.3000000000006,
-  "sma_200": 1448.5074999999995,
-  "above_sma20": true,
+  "open": 899.9247,
+  "high": 908.1394,
+  "low": 881.9262,
+  "close": 884.5106,
+  "volume": 21849830,
+  "return_1d": -0.02166870017773459,
+  "return_5d": -0.03623064680079813,
+  "return_20d": -0.05205622562784851,
+  "return_60d": -0.004777237047181915,
+  "sma_20": 902.64984,
+  "sma_50": 938.9823320000003,
+  "sma_200": 946.805106500001,
+  "above_sma20": false,
   "above_sma50": false,
   "above_sma200": false,
-  "rsi_14": 51.17187043578757,
-  "volatility_20d": 0.014523407939651853,
-  "volume_avg_20d": 19573624.05,
-  "volume_ratio_20d": 0.9728055954972732,
-  "high_52w": 1611.8,
-  "distance_from_52w_high": -0.1232783223725028,
-  "drawdown_20d": -0.007654494382022481,
-  "nifty_return_1d": 0.017696254179613513,
-  "nifty_return_5d": -0.021733168512668932,
-  "nifty_return_20d": -0.08413878827946442,
-  "relative_return_5d": 0.025284052682827296,
-  "relative_return_20d": 0.07315054639816543,
+  "rsi_14": 40.909656424982806,
+  "volatility_20d": 0.014950395702321229,
+  "volume_avg_20d": 18047323.55,
+  "volume_ratio_20d": 1.210696419303681,
+  "high_52w": 1093.4546,
+  "distance_from_52w_high": -0.1910861228257671,
+  "drawdown_20d": -0.0530866756278886,
+  "nifty_return_1d": -0.008608350321265612,
+  "nifty_return_5d": -0.008377356451857998,
+  "nifty_return_20d": -0.020632866836739372,
+  "relative_return_5d": -0.02785329034894013,
+  "relative_return_20d": -0.031423358791109135,
   "decision_ready": true
 }
 ```
 
-### HDFCBANK 2026-03-25 decision_ready=true
+### HDFCBANK 2021-05-04 decision_ready=true
 
 ```json
 {
-  "date": "2026-03-25",
+  "date": "2021-05-04",
   "ticker": "HDFCBANK",
-  "open": 768.2,
-  "high": 794.8,
-  "low": 768.2,
-  "close": 782.3,
-  "volume": 59230640,
-  "return_1d": 0.02274807164335213,
-  "return_5d": -0.07205978293102422,
-  "return_20d": -0.1408017572762219,
-  "return_60d": -0.21147061788126198,
-  "sma_20": 837.4825000000001,
-  "sma_50": 891.9659999999998,
-  "sma_200": 962.3272500000014,
+  "open": 704.975,
+  "high": 711.5,
+  "low": 691.65,
+  "close": 694.175,
+  "volume": 21486328,
+  "return_1d": -0.0184524019937079,
+  "return_5d": -0.034996872176270344,
+  "return_20d": -0.06618463090633941,
+  "return_60d": -0.11034571144788696,
+  "sma_20": 711.6524999999999,
+  "sma_50": 744.1760000000002,
+  "sma_200": 661.8506249999998,
   "above_sma20": false,
   "above_sma50": false,
-  "above_sma200": false,
-  "rsi_14": 33.67679004059504,
-  "volatility_20d": 0.021648010445531357,
-  "volume_avg_20d": 52416504.05,
-  "volume_ratio_20d": 1.1299998172999102,
-  "high_52w": 1020.5,
-  "distance_from_52w_high": -0.23341499265066146,
-  "drawdown_20d": -0.13805641251652723,
-  "nifty_return_1d": 0.017696254179613513,
-  "nifty_return_5d": -0.021733168512668932,
-  "nifty_return_20d": -0.08413878827946442,
-  "relative_return_5d": -0.05032661441835529,
-  "relative_return_20d": -0.05666296899675749,
+  "above_sma200": true,
+  "rsi_14": 40.91546634091152,
+  "volatility_20d": 0.01973416971186538,
+  "volume_avg_20d": 23986843,
+  "volume_ratio_20d": 0.895754726872561,
+  "high_52w": 820.5,
+  "distance_from_52w_high": -0.15396099939061558,
+  "drawdown_20d": -0.05989301191765983,
+  "nifty_return_1d": -0.008608350321265612,
+  "nifty_return_5d": -0.008377356451857998,
+  "nifty_return_20d": -0.020632866836739372,
+  "relative_return_5d": -0.026619515724412346,
+  "relative_return_20d": -0.04555176406960004,
   "decision_ready": true
 }
 ```

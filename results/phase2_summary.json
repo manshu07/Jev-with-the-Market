@@ -1,6 +1,6 @@
 {
   "phase": 2,
-  "generated_at_ist": "22/9/2026, 21:46:43",
+  "generated_at_ist": "3/10/2026, 07:29:00",
   "jev_called": false,
   "universe_label": "Fixed current NIFTY 100 universe",
   "database": "data/processed/market.duckdb",
@@ -9,103 +9,355 @@
   "adj_close_used": false,
   "high_52w_sessions": 252,
   "stocks": 100,
-  "trading_days": 384,
-  "feature_rows": 38400,
-  "decision_ready_rows": 11772,
-  "first_decision_ready_date": "2026-03-10",
-  "last_decision_ready_date": "2026-09-22",
+  "trading_days": 1585,
+  "feature_rows": 158500,
+  "decision_ready_rows": 122328,
+  "first_decision_ready_date": "2021-05-04",
+  "last_decision_ready_date": "2026-09-23",
   "insufficient_history": [
     "TATACAP",
     "TMCV"
   ],
   "null_counts": {
-    "return_1d": 691,
-    "return_5d": 1092,
-    "return_20d": 2496,
-    "return_60d": 6494,
-    "rsi_14": 2881,
-    "volatility_20d": 3488,
-    "volume_ratio_20d": 3387,
-    "distance_from_52w_high": 26628,
-    "drawdown_20d": 3387,
-    "nifty_return_20d": 2200,
-    "relative_return_20d": 2696
+    "return_1d": 6970,
+    "return_5d": 7371,
+    "return_20d": 8871,
+    "return_60d": 12871,
+    "rsi_14": 8374,
+    "volatility_20d": 9022,
+    "volume_ratio_20d": 8914,
+    "distance_from_52w_high": 33916,
+    "drawdown_20d": 8914,
+    "nifty_return_20d": 3600,
+    "relative_return_20d": 10401
   },
   "field_stats": [
     {
       "field": "return_1d",
-      "min": -0.6489788004136505,
-      "median": 0,
-      "max": 0.12250629478985098
+      "min": -0.8994344946731933,
+      "median": 0.00036305703174233095,
+      "max": 9.119051087659594
     },
     {
       "field": "return_5d",
-      "min": -0.6308455682436107,
-      "median": -0.0004698317223730819,
-      "max": 0.2760565125790062
+      "min": -0.8955686726173337,
+      "median": 0.0028615568784351453,
+      "max": 9.40742694124134
     },
     {
       "field": "return_20d",
-      "min": -0.5951153324287652,
-      "median": 0.002070002138474414,
-      "max": 0.5553738317757011
+      "min": -0.8931932047221423,
+      "median": 0.011986478487432395,
+      "max": 9.345793167546441
     },
     {
       "field": "return_60d",
-      "min": -0.6699921752738653,
-      "median": 0.0031784229684955756,
-      "max": 0.8509400453181455
+      "min": -0.8936942124964008,
+      "median": 0.036797153912972336,
+      "max": 11.6784214945424
     },
     {
       "field": "rsi_14",
-      "min": 14.706641741439483,
-      "median": 50.44626700922713,
-      "max": 90.24200699832053
+      "min": 9.742309909373787,
+      "median": 52.36549750436037,
+      "max": 99.3662377756792
     },
     {
       "field": "volatility_20d",
-      "min": 0.005420984167717772,
-      "median": 0.016620128638419735,
-      "max": 0.15231163579285922
+      "min": 0.003449287317275322,
+      "median": 0.016092424266982926,
+      "max": 2.0596927752918
     },
     {
       "field": "volume_ratio_20d",
-      "min": 0.14319531873004773,
-      "median": 0.8208972785091406,
-      "max": 12.570049110849997
+      "min": 0.013596965507564894,
+      "median": 0.8420997530327833,
+      "max": 15.156364714337661
     },
     {
       "field": "distance_from_52w_high",
-      "min": -0.6816981132075471,
-      "median": -0.1533173364637626,
+      "min": -0.9065869640188527,
+      "median": -0.11317791867359323,
       "max": 0
     },
     {
       "field": "drawdown_20d",
-      "min": -0.6551746031746032,
-      "median": -0.03467659194536482,
+      "min": -0.9013187446012093,
+      "median": -0.03097717072671302,
       "max": 0
     },
     {
       "field": "nifty_return_20d",
       "min": -0.12778315547285557,
-      "median": 0.0044801916820138565,
-      "max": 0.08832593823085833
+      "median": 0.008879997732276212,
+      "max": 0.13104717636286356
     },
     {
       "field": "relative_return_20d",
-      "min": -0.6736191575344624,
-      "median": 0.0023201113677135954,
-      "max": 0.48302199571690174
+      "min": -0.9525495300746414,
+      "median": 0.002933775875971656,
+      "max": 9.345139366831827
     }
   ],
   "large_one_day_moves": [
+    {
+      "date": "2025-03-18",
+      "ticker": "BAJFINANCE",
+      "close": 8682.5,
+      "return_1d": 9.119051087659594,
+      "volume": 1103110
+    },
+    {
+      "date": "2025-03-18",
+      "ticker": "KOTAKBANK",
+      "close": 2034,
+      "return_1d": 4.102603983743917,
+      "volume": 5384288
+    },
+    {
+      "date": "2024-01-15",
+      "ticker": "SHRIRAMFIN",
+      "close": 2319.55,
+      "return_1d": 4.058334787159805,
+      "volume": 556738
+    },
+    {
+      "date": "2025-03-18",
+      "ticker": "ADANIPOWER",
+      "close": 516.15,
+      "return_1d": 4.048415492957747,
+      "volume": 2910834
+    },
+    {
+      "date": "2024-01-15",
+      "ticker": "MAZDOCK",
+      "close": 2347.4,
+      "return_1d": 1.0479399768806301,
+      "volume": 2174201
+    },
+    {
+      "date": "2025-03-18",
+      "ticker": "HDFCAMC",
+      "close": 3827.6,
+      "return_1d": 1.0432119359961565,
+      "volume": 416479
+    },
+    {
+      "date": "2025-03-18",
+      "ticker": "HDFCBANK",
+      "close": 1732.2,
+      "return_1d": 1.0254911131898972,
+      "volume": 10953589
+    },
+    {
+      "date": "2025-03-18",
+      "ticker": "NESTLEIND",
+      "close": 2202.05,
+      "return_1d": 1.0254788787453726,
+      "volume": 423776
+    },
+    {
+      "date": "2025-03-18",
+      "ticker": "PIDILITIND",
+      "close": 2729.15,
+      "return_1d": 0.9856306158827168,
+      "volume": 288689
+    },
+    {
+      "date": "2025-03-19",
+      "ticker": "BAJFINANCE",
+      "close": 873.16,
+      "return_1d": -0.8994344946731933,
+      "volume": 12898200
+    },
+    {
+      "date": "2025-03-19",
+      "ticker": "KOTAKBANK",
+      "close": 404.31,
+      "return_1d": -0.8012241887905605,
+      "volume": 26691440
+    },
+    {
+      "date": "2024-01-16",
+      "ticker": "SHRIRAMFIN",
+      "close": 461.94,
+      "return_1d": -0.8008493026664655,
+      "volume": 6647950
+    },
+    {
+      "date": "2025-03-19",
+      "ticker": "ADANIPOWER",
+      "close": 104.2,
+      "return_1d": -0.7981207013465078,
+      "volume": 18174890
+    },
+    {
+      "date": "2025-03-18",
+      "ticker": "SIEMENS",
+      "close": 5107.6,
+      "return_1d": 0.762643227703578,
+      "volume": 259115
+    },
     {
       "date": "2026-04-30",
       "ticker": "VEDL",
       "close": 271.55,
       "return_1d": -0.6489788004136505,
       "volume": 73870853
+    },
+    {
+      "date": "2025-03-18",
+      "ticker": "MOTHERSON",
+      "close": 125.38,
+      "return_1d": 0.5544259856186462,
+      "volume": 11974671
+    },
+    {
+      "date": "2024-01-15",
+      "ticker": "MOTHERSON",
+      "close": 109.65,
+      "return_1d": 0.5314245810055869,
+      "volume": 24152334
+    },
+    {
+      "date": "2024-01-16",
+      "ticker": "MAZDOCK",
+      "close": 1163,
+      "return_1d": -0.5045582346425833,
+      "volume": 8391410
+    },
+    {
+      "date": "2025-03-19",
+      "ticker": "NESTLEIND",
+      "close": 1092,
+      "return_1d": -0.5040984537135851,
+      "volume": 845086
+    },
+    {
+      "date": "2025-03-19",
+      "ticker": "PIDILITIND",
+      "close": 1365.925,
+      "return_1d": -0.499505340490629,
+      "volume": 484702
+    },
+    {
+      "date": "2025-03-19",
+      "ticker": "HDFCBANK",
+      "close": 872.05,
+      "return_1d": -0.4965650617711581,
+      "volume": 15221406
+    },
+    {
+      "date": "2025-03-19",
+      "ticker": "HDFCAMC",
+      "close": 1987.875,
+      "return_1d": -0.48064714181210155,
+      "volume": 813080
+    },
+    {
+      "date": "2025-03-19",
+      "ticker": "SIEMENS",
+      "close": 3066.7788,
+      "return_1d": -0.39956558853473256,
+      "volume": 855208
+    },
+    {
+      "date": "2024-01-16",
+      "ticker": "MOTHERSON",
+      "close": 72.9,
+      "return_1d": -0.33515731874145005,
+      "volume": 28529832
+    },
+    {
+      "date": "2025-03-19",
+      "ticker": "MOTHERSON",
+      "close": 86.0067,
+      "return_1d": -0.3140317434997607,
+      "volume": 14779144
+    },
+    {
+      "date": "2022-01-14",
+      "ticker": "MOTHERSON",
+      "close": 82.4667,
+      "return_1d": 0.2855031776441006,
+      "volume": 100740235
+    },
+    {
+      "date": "2023-02-01",
+      "ticker": "ADANIENT",
+      "close": 2135.3501,
+      "return_1d": -0.2819697461908519,
+      "volume": 13525314
+    },
+    {
+      "date": "2023-02-02",
+      "ticker": "ADANIENT",
+      "close": 1565.25,
+      "return_1d": -0.2669820279119569,
+      "volume": 34474080
+    },
+    {
+      "date": "2024-05-21",
+      "ticker": "HINDZINC",
+      "close": 741.3,
+      "return_1d": 0.25601491019993206,
+      "volume": 15462688
+    },
+    {
+      "date": "2024-06-04",
+      "ticker": "RECLTD",
+      "close": 452.2,
+      "return_1d": -0.2519437551695617,
+      "volume": 103902126
+    },
+    {
+      "date": "2024-06-04",
+      "ticker": "PFC",
+      "close": 426.75,
+      "return_1d": -0.23080389329488094,
+      "volume": 108815947
+    },
+    {
+      "date": "2024-11-21",
+      "ticker": "ADANIENT",
+      "close": 2183.6499,
+      "return_1d": -0.22606772993088786,
+      "volume": 21796668
+    },
+    {
+      "date": "2021-05-12",
+      "ticker": "GODREJCP",
+      "close": 872.85,
+      "return_1d": 0.2187238201619659,
+      "volume": 27379767
+    },
+    {
+      "date": "2024-11-29",
+      "ticker": "ADANIGREEN",
+      "close": 1323.9,
+      "return_1d": 0.2177152317880795,
+      "volume": 23771119
+    },
+    {
+      "date": "2024-06-04",
+      "ticker": "ADANIPORTS",
+      "close": 1248.95,
+      "return_1d": -0.21149657501815078,
+      "volume": 52109624
+    },
+    {
+      "date": "2021-10-13",
+      "ticker": "TMPV",
+      "close": 506.9,
+      "return_1d": 0.2044671498158488,
+      "volume": 197949387
+    },
+    {
+      "date": "2023-02-08",
+      "ticker": "ADANIENT",
+      "close": 2164.25,
+      "return_1d": 0.2003937990515543,
+      "volume": 19173006
     }
   ],
   "violations": 0,

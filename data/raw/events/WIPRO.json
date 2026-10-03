@@ -1,6 +1,30 @@
 {
   "dividends": [
     {
+      "date": "2021-01-22",
+      "amount": 0.5
+    },
+    {
+      "date": "2022-01-21",
+      "amount": 0.5
+    },
+    {
+      "date": "2022-04-05",
+      "amount": 2.5
+    },
+    {
+      "date": "2023-01-24",
+      "amount": 0.5
+    },
+    {
+      "date": "2024-01-24",
+      "amount": 0.5
+    },
+    {
+      "date": "2025-01-28",
+      "amount": 6
+    },
+    {
       "date": "2025-07-28",
       "amount": 5
     },
@@ -13,5 +37,12 @@
       "amount": 2
     }
   ],
-  "splits": []
+  "splits": [
+    {
+      "date": "2024-12-03",
+      "numerator": 2,
+      "denominator": 1,
+      "splitRatio": "2:1"
+    }
+  ]
 }

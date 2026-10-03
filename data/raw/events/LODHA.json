@@ -1,6 +1,14 @@
 {
   "dividends": [
     {
+      "date": "2023-09-08",
+      "amount": 1
+    },
+    {
+      "date": "2024-08-16",
+      "amount": 2.25
+    },
+    {
       "date": "2025-08-22",
       "amount": 4.25
     },
@@ -9,5 +17,12 @@
       "amount": 4.25
     }
   ],
-  "splits": []
+  "splits": [
+    {
+      "date": "2023-05-31",
+      "numerator": 2,
+      "denominator": 1,
+      "splitRatio": "2:1"
+    }
+  ]
 }

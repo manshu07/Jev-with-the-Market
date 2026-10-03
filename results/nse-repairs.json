@@ -1,0 +1,2683 @@
+{
+  "generated_at": "2026-10-03T01:58:44.099Z",
+  "patched": 118,
+  "missed": 10,
+  "repairs": [
+    {
+      "date": "2021-11-04",
+      "symbol": "BRITANNIA",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2021-11-04",
+        "open": "3629.8501",
+        "high": "3629.8501",
+        "low": "3629.8501",
+        "close": "3629.8501",
+        "adj_close": "3362.2825",
+        "volume": "0"
+      },
+      "after": {
+        "open": "3695.00",
+        "high": "3699.80",
+        "low": "3618.05",
+        "close": "3629.85",
+        "volume": "185296"
+      }
+    },
+    {
+      "date": "2021-11-04",
+      "symbol": "DLF",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2021-11-04",
+        "open": "429.65",
+        "high": "429.65",
+        "low": "429.65",
+        "close": "429.65",
+        "adj_close": "412.3234",
+        "volume": "0"
+      },
+      "after": {
+        "open": "431.85",
+        "high": "434.80",
+        "low": "422.30",
+        "close": "429.65",
+        "volume": "11101084"
+      }
+    },
+    {
+      "date": "2021-11-04",
+      "symbol": "JSWSTEEL",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2021-11-04",
+        "open": "680.25",
+        "high": "680.25",
+        "low": "680.25",
+        "close": "680.25",
+        "adj_close": "646.5211",
+        "volume": "0"
+      },
+      "after": {
+        "open": "677.45",
+        "high": "683.55",
+        "low": "673.55",
+        "close": "680.25",
+        "volume": "2265795"
+      }
+    },
+    {
+      "date": "2021-11-04",
+      "symbol": "ZYDUSLIFE",
+      "reason": "placeholder",
+      "source": "bhavcopy_missing_symbol",
+      "before": null,
+      "after": null
+    },
+    {
+      "date": "2022-09-12",
+      "symbol": "BRITANNIA",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2022-09-12",
+        "open": "3649.5",
+        "high": "3649.5",
+        "low": "3649.5",
+        "close": "3649.5",
+        "adj_close": "3438.793",
+        "volume": "0"
+      },
+      "after": {
+        "open": "3640.20",
+        "high": "3697.95",
+        "low": "3640.20",
+        "close": "3671.85",
+        "volume": "212688"
+      }
+    },
+    {
+      "date": "2022-09-12",
+      "symbol": "DLF",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2022-09-12",
+        "open": "396.9",
+        "high": "396.9",
+        "low": "396.9",
+        "close": "396.9",
+        "adj_close": "383.8913",
+        "volume": "0"
+      },
+      "after": {
+        "open": "398.40",
+        "high": "411.20",
+        "low": "395.80",
+        "close": "409.60",
+        "volume": "9496756"
+      }
+    },
+    {
+      "date": "2022-09-12",
+      "symbol": "JSWSTEEL",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2022-09-12",
+        "open": "686.95",
+        "high": "686.95",
+        "low": "686.95",
+        "close": "686.95",
+        "adj_close": "673.0629",
+        "volume": "0"
+      },
+      "after": {
+        "open": "687.30",
+        "high": "694.40",
+        "low": "681.45",
+        "close": "686.55",
+        "volume": "2582240"
+      }
+    },
+    {
+      "date": "2022-09-12",
+      "symbol": "ZYDUSLIFE",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2022-09-12",
+        "open": "374.1",
+        "high": "374.1",
+        "low": "374.1",
+        "close": "374.1",
+        "adj_close": "365.2065",
+        "volume": "0"
+      },
+      "after": {
+        "open": "374.35",
+        "high": "381.85",
+        "low": "373.25",
+        "close": "376.65",
+        "volume": "834968"
+      }
+    },
+    {
+      "date": "2022-10-24",
+      "symbol": "BRITANNIA",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2022-10-24",
+        "open": "3792.7",
+        "high": "3792.7",
+        "low": "3792.7",
+        "close": "3792.7",
+        "adj_close": "3573.7251",
+        "volume": "0"
+      },
+      "after": {
+        "open": "3799.00",
+        "high": "3835.60",
+        "low": "3712.00",
+        "close": "3801.85",
+        "volume": "32851"
+      }
+    },
+    {
+      "date": "2022-10-24",
+      "symbol": "DLF",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2022-10-24",
+        "open": "369.8",
+        "high": "369.8",
+        "low": "369.8",
+        "close": "369.8",
+        "adj_close": "357.6795",
+        "volume": "0"
+      },
+      "after": {
+        "open": "374.00",
+        "high": "374.85",
+        "low": "366.70",
+        "close": "367.65",
+        "volume": "821743"
+      }
+    },
+    {
+      "date": "2022-10-24",
+      "symbol": "JSWSTEEL",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2022-10-24",
+        "open": "622.05",
+        "high": "622.05",
+        "low": "622.05",
+        "close": "622.05",
+        "adj_close": "609.4748",
+        "volume": "0"
+      },
+      "after": {
+        "open": "622.00",
+        "high": "633.95",
+        "low": "620.55",
+        "close": "629.60",
+        "volume": "834558"
+      }
+    },
+    {
+      "date": "2022-10-24",
+      "symbol": "ZYDUSLIFE",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2022-10-24",
+        "open": "410.15",
+        "high": "410.15",
+        "low": "410.15",
+        "close": "410.15",
+        "adj_close": "400.3994",
+        "volume": "0"
+      },
+      "after": {
+        "open": "415.80",
+        "high": "417.35",
+        "low": "412.00",
+        "close": "413.10",
+        "volume": "171701"
+      }
+    },
+    {
+      "date": "2022-12-01",
+      "symbol": "LTM",
+      "reason": "placeholder",
+      "source": "bhavcopy_missing_symbol",
+      "before": null,
+      "after": null
+    },
+    {
+      "date": "2022-12-02",
+      "symbol": "LTM",
+      "reason": "placeholder",
+      "source": "bhavcopy_missing_symbol",
+      "before": null,
+      "after": null
+    },
+    {
+      "date": "2024-01-15",
+      "symbol": "ADANIENSOL",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2024-01-15",
+        "open": "1152.2",
+        "high": "1152.2",
+        "low": "1152.2",
+        "close": "1152.2",
+        "adj_close": "1152.2",
+        "volume": "0"
+      },
+      "after": {
+        "open": "1158.40",
+        "high": "1164.65",
+        "low": "1127.05",
+        "close": "1148.00",
+        "volume": "3399085"
+      }
+    },
+    {
+      "date": "2024-01-15",
+      "symbol": "BAJAJ-AUTO",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2024-01-15",
+        "open": "7301.9502",
+        "high": "7301.9502",
+        "low": "7301.9502",
+        "close": "7301.9502",
+        "adj_close": "6966.0176",
+        "volume": "0"
+      },
+      "after": {
+        "open": "7364.00",
+        "high": "7419.00",
+        "low": "7304.05",
+        "close": "7332.10",
+        "volume": "440410"
+      }
+    },
+    {
+      "date": "2024-01-15",
+      "symbol": "ETERNAL",
+      "reason": "placeholder",
+      "source": "bhavcopy_missing_symbol",
+      "before": null,
+      "after": null
+    },
+    {
+      "date": "2024-01-15",
+      "symbol": "IRFC",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2024-01-15",
+        "open": "113.4",
+        "high": "113.4",
+        "low": "113.4",
+        "close": "113.4",
+        "adj_close": "109.5475",
+        "volume": "0"
+      },
+      "after": {
+        "open": "116.70",
+        "high": "134.75",
+        "low": "116.70",
+        "close": "130.10",
+        "volume": "448451444"
+      }
+    },
+    {
+      "date": "2024-01-15",
+      "symbol": "JIOFIN",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2024-01-15",
+        "open": "255.05",
+        "high": "255.05",
+        "low": "255.05",
+        "close": "255.05",
+        "adj_close": "254.0579",
+        "volume": "0"
+      },
+      "after": {
+        "open": "258.00",
+        "high": "269.70",
+        "low": "257.05",
+        "close": "266.75",
+        "volume": "68617372"
+      }
+    },
+    {
+      "date": "2024-01-15",
+      "symbol": "LTM",
+      "reason": "placeholder",
+      "source": "bhavcopy_missing_symbol",
+      "before": null,
+      "after": null
+    },
+    {
+      "date": "2024-01-15",
+      "symbol": "LODHA",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2024-01-15",
+        "open": "1208.05",
+        "high": "1208.05",
+        "low": "1208.05",
+        "close": "1208.05",
+        "adj_close": "1197.7634",
+        "volume": "0"
+      },
+      "after": {
+        "open": "1219.90",
+        "high": "1225.95",
+        "low": "1185.00",
+        "close": "1215.70",
+        "volume": "606927"
+      }
+    },
+    {
+      "date": "2024-01-15",
+      "symbol": "MAZDOCK",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2024-01-15",
+        "open": "1146.225",
+        "high": "1146.225",
+        "low": "1146.225",
+        "close": "1146.225",
+        "adj_close": "1125.9635",
+        "volume": "0"
+      },
+      "after": {
+        "open": "2305.10",
+        "high": "2378.30",
+        "low": "2270.10",
+        "close": "2347.40",
+        "volume": "2174201"
+      }
+    },
+    {
+      "date": "2024-01-15",
+      "symbol": "MOTHERSON",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2024-01-15",
+        "open": "71.6",
+        "high": "71.6",
+        "low": "71.6",
+        "close": "71.6",
+        "adj_close": "70.5056",
+        "volume": "0"
+      },
+      "after": {
+        "open": "108.00",
+        "high": "110.50",
+        "low": "107.20",
+        "close": "109.65",
+        "volume": "24152334"
+      }
+    },
+    {
+      "date": "2024-01-15",
+      "symbol": "SHRIRAMFIN",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2024-01-15",
+        "open": "458.56",
+        "high": "458.56",
+        "low": "458.56",
+        "close": "458.56",
+        "adj_close": "441.7507",
+        "volume": "0"
+      },
+      "after": {
+        "open": "2303.10",
+        "high": "2325.00",
+        "low": "2280.00",
+        "close": "2319.55",
+        "volume": "556738"
+      }
+    },
+    {
+      "date": "2024-01-15",
+      "symbol": "UNITDSPR",
+      "reason": "placeholder",
+      "source": "bhavcopy_missing_symbol",
+      "before": null,
+      "after": null
+    },
+    {
+      "date": "2024-01-15",
+      "symbol": "ZYDUSLIFE",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2024-01-15",
+        "open": "703.95",
+        "high": "703.95",
+        "low": "703.95",
+        "close": "703.95",
+        "adj_close": "693.6225",
+        "volume": "0"
+      },
+      "after": {
+        "open": "704.35",
+        "high": "724.45",
+        "low": "700.30",
+        "close": "716.85",
+        "volume": "1150461"
+      }
+    },
+    {
+      "date": "2024-06-07",
+      "symbol": "UNITDSPR",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2024-06-07",
+        "open": "1305.45",
+        "high": "1305.45",
+        "low": "1305.45",
+        "close": "1305.45",
+        "adj_close": "1273.3934",
+        "volume": "0"
+      },
+      "after": {
+        "open": "1306.45",
+        "high": "1320.00",
+        "low": "1294.65",
+        "close": "1307.55",
+        "volume": "1151764"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "ABB",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "5187.6499",
+        "high": "5187.6499",
+        "low": "5187.6499",
+        "close": "5187.6499",
+        "adj_close": "5065.7407",
+        "volume": "0"
+      },
+      "after": {
+        "open": "5216.95",
+        "high": "5425.00",
+        "low": "5216.95",
+        "close": "5410.90",
+        "volume": "508165"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "ADANIENSOL",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "795.05",
+        "high": "795.05",
+        "low": "795.05",
+        "close": "795.05",
+        "adj_close": "795.05",
+        "volume": "0"
+      },
+      "after": {
+        "open": "800.70",
+        "high": "807.80",
+        "low": "786.30",
+        "close": "798.55",
+        "volume": "1344527"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "ADANIENT",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "2252.7",
+        "high": "2252.7",
+        "low": "2252.7",
+        "close": "2252.7",
+        "adj_close": "2250.5774",
+        "volume": "0"
+      },
+      "after": {
+        "open": "2274.00",
+        "high": "2314.20",
+        "low": "2259.75",
+        "close": "2308.50",
+        "volume": "878007"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "ADANIGREEN",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "896.45",
+        "high": "896.45",
+        "low": "896.45",
+        "close": "896.45",
+        "adj_close": "896.45",
+        "volume": "0"
+      },
+      "after": {
+        "open": "904.70",
+        "high": "911.90",
+        "low": "889.10",
+        "close": "900.90",
+        "volume": "4222109"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "ADANIPORTS",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "1137.15",
+        "high": "1137.15",
+        "low": "1137.15",
+        "close": "1137.15",
+        "adj_close": "1126.8951",
+        "volume": "0"
+      },
+      "after": {
+        "open": "1149.90",
+        "high": "1161.00",
+        "low": "1137.95",
+        "close": "1158.80",
+        "volume": "1865040"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "ADANIPOWER",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "102.24",
+        "high": "102.24",
+        "low": "102.24",
+        "close": "102.24",
+        "adj_close": "102.24",
+        "volume": "0"
+      },
+      "after": {
+        "open": "515.00",
+        "high": "519.00",
+        "low": "510.00",
+        "close": "516.15",
+        "volume": "2910834"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "AMBUJACEM",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "490.55",
+        "high": "490.55",
+        "low": "490.55",
+        "close": "490.55",
+        "adj_close": "486.3534",
+        "volume": "0"
+      },
+      "after": {
+        "open": "493.00",
+        "high": "499.80",
+        "low": "492.15",
+        "close": "498.15",
+        "volume": "2255773"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "APOLLOHOSP",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "6156.6499",
+        "high": "6156.6499",
+        "low": "6156.6499",
+        "close": "6156.6499",
+        "adj_close": "6133.4868",
+        "volume": "0"
+      },
+      "after": {
+        "open": "6209.90",
+        "high": "6260.95",
+        "low": "6162.50",
+        "close": "6246.80",
+        "volume": "308477"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "ASIANPAINT",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "2219.55",
+        "high": "2219.55",
+        "low": "2219.55",
+        "close": "2219.55",
+        "adj_close": "2176.9453",
+        "volume": "0"
+      },
+      "after": {
+        "open": "2230.65",
+        "high": "2290.00",
+        "low": "2222.75",
+        "close": "2273.95",
+        "volume": "816364"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "DMART",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "3825.3",
+        "high": "3825.3",
+        "low": "3825.3",
+        "close": "3825.3",
+        "adj_close": "3825.3",
+        "volume": "0"
+      },
+      "after": {
+        "open": "3843.75",
+        "high": "3868.40",
+        "low": "3783.00",
+        "close": "3833.85",
+        "volume": "296518"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "AXISBANK",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "1034.15",
+        "high": "1034.15",
+        "low": "1034.15",
+        "close": "1034.15",
+        "adj_close": "1032.4707",
+        "volume": "0"
+      },
+      "after": {
+        "open": "1044.15",
+        "high": "1054.25",
+        "low": "1033.70",
+        "close": "1045.25",
+        "volume": "7365940"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "BAJAJ-AUTO",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "7486.0498",
+        "high": "7486.0498",
+        "low": "7486.0498",
+        "close": "7486.0498",
+        "adj_close": "7199.6899",
+        "volume": "0"
+      },
+      "after": {
+        "open": "7523.40",
+        "high": "7642.10",
+        "low": "7512.85",
+        "close": "7613.40",
+        "volume": "354990"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "BAJFINANCE",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "858.035",
+        "high": "858.035",
+        "low": "858.035",
+        "close": "858.035",
+        "adj_close": "847.5628",
+        "volume": "0"
+      },
+      "after": {
+        "open": "8615.00",
+        "high": "8699.00",
+        "low": "8494.80",
+        "close": "8682.50",
+        "volume": "1103110"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "BAJAJFINSV",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "1871.6",
+        "high": "1871.6",
+        "low": "1871.6",
+        "close": "1871.6",
+        "adj_close": "1869.0936",
+        "volume": "0"
+      },
+      "after": {
+        "open": "1900.00",
+        "high": "1907.85",
+        "low": "1833.25",
+        "close": "1844.65",
+        "volume": "4342446"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "BAJAJHLDNG",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "11566.5996",
+        "high": "11566.5996",
+        "low": "11566.5996",
+        "close": "11566.5996",
+        "adj_close": "11280.0898",
+        "volume": "0"
+      },
+      "after": {
+        "open": "11748.90",
+        "high": "11915.00",
+        "low": "11508.10",
+        "close": "11619.40",
+        "volume": "105830"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "BANKBARODA",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "205.74",
+        "high": "205.74",
+        "low": "205.74",
+        "close": "205.74",
+        "adj_close": "192.6546",
+        "volume": "0"
+      },
+      "after": {
+        "open": "206.55",
+        "high": "209.95",
+        "low": "205.75",
+        "close": "209.34",
+        "volume": "9116780"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "BEL",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "279.93",
+        "high": "279.93",
+        "low": "279.93",
+        "close": "279.93",
+        "adj_close": "277.7211",
+        "volume": "0"
+      },
+      "after": {
+        "open": "282.00",
+        "high": "286.00",
+        "low": "280.31",
+        "close": "285.31",
+        "volume": "15290505"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "BPCL",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "261.42",
+        "high": "261.42",
+        "low": "261.42",
+        "close": "261.42",
+        "adj_close": "245.3708",
+        "volume": "0"
+      },
+      "after": {
+        "open": "262.15",
+        "high": "263.30",
+        "low": "259.51",
+        "close": "262.18",
+        "volume": "5548862"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "BHARTIARTL",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "1639.15",
+        "high": "1639.15",
+        "low": "1639.15",
+        "close": "1639.15",
+        "adj_close": "1605.3567",
+        "volume": "0"
+      },
+      "after": {
+        "open": "1649.50",
+        "high": "1655.00",
+        "low": "1622.10",
+        "close": "1627.30",
+        "volume": "6539954"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "BOSCHLTD",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "26345.8496",
+        "high": "26345.8496",
+        "low": "26345.8496",
+        "close": "26345.8496",
+        "adj_close": "25823.123",
+        "volume": "0"
+      },
+      "after": {
+        "open": "26550.00",
+        "high": "27430.00",
+        "low": "26532.05",
+        "close": "27343.65",
+        "volume": "31416"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "BRITANNIA",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "4674.8999",
+        "high": "4674.8999",
+        "low": "4674.8999",
+        "close": "4674.8999",
+        "adj_close": "4538.8364",
+        "volume": "0"
+      },
+      "after": {
+        "open": "4695.65",
+        "high": "4782.90",
+        "low": "4682.70",
+        "close": "4768.30",
+        "volume": "242447"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "CGPOWER",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "610.1",
+        "high": "610.1",
+        "low": "610.1",
+        "close": "610.1",
+        "adj_close": "607.5474",
+        "volume": "0"
+      },
+      "after": {
+        "open": "618.85",
+        "high": "639.70",
+        "low": "613.45",
+        "close": "635.15",
+        "volume": "2686557"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "CANBK",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "82.49",
+        "high": "82.49",
+        "low": "82.49",
+        "close": "82.49",
+        "adj_close": "77.0935",
+        "volume": "0"
+      },
+      "after": {
+        "open": "82.86",
+        "high": "84.10",
+        "low": "82.61",
+        "close": "83.92",
+        "volume": "20710941"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "CHOLAFIN",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "1455.6",
+        "high": "1455.6",
+        "low": "1455.6",
+        "close": "1455.6",
+        "adj_close": "1453.287",
+        "volume": "0"
+      },
+      "after": {
+        "open": "1465.00",
+        "high": "1521.35",
+        "low": "1455.45",
+        "close": "1515.25",
+        "volume": "2238715"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "CIPLA",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "1492.6",
+        "high": "1492.6",
+        "low": "1492.6",
+        "close": "1492.6",
+        "adj_close": "1463.0979",
+        "volume": "0"
+      },
+      "after": {
+        "open": "1499.10",
+        "high": "1512.00",
+        "low": "1496.80",
+        "close": "1508.65",
+        "volume": "1571087"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "COALINDIA",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "385.75",
+        "high": "385.75",
+        "low": "385.75",
+        "close": "385.75",
+        "adj_close": "351.2148",
+        "volume": "0"
+      },
+      "after": {
+        "open": "387.45",
+        "high": "393.15",
+        "low": "386.45",
+        "close": "389.30",
+        "volume": "6211943"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "CUMMINSIND",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "2862.1001",
+        "high": "2862.1001",
+        "low": "2862.1001",
+        "close": "2862.1001",
+        "adj_close": "2799.301",
+        "volume": "0"
+      },
+      "after": {
+        "open": "2884.00",
+        "high": "2939.00",
+        "low": "2870.00",
+        "close": "2929.65",
+        "volume": "247269"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "DLF",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "655.55",
+        "high": "655.55",
+        "low": "655.55",
+        "close": "655.55",
+        "adj_close": "642.7205",
+        "volume": "0"
+      },
+      "after": {
+        "open": "660.50",
+        "high": "682.90",
+        "low": "660.50",
+        "close": "674.80",
+        "volume": "3686355"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "DIVISLAB",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "5670.8501",
+        "high": "5670.8501",
+        "low": "5670.8501",
+        "close": "5670.8501",
+        "adj_close": "5621.9619",
+        "volume": "0"
+      },
+      "after": {
+        "open": "5680.00",
+        "high": "5809.00",
+        "low": "5627.00",
+        "close": "5772.95",
+        "volume": "397067"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "DRREDDY",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "1150.7",
+        "high": "1150.7",
+        "low": "1150.7",
+        "close": "1150.7",
+        "adj_close": "1136.2424",
+        "volume": "0"
+      },
+      "after": {
+        "open": "1157.80",
+        "high": "1169.40",
+        "low": "1149.00",
+        "close": "1163.70",
+        "volume": "1734982"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "EICHERMOT",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "5050.25",
+        "high": "5050.25",
+        "low": "5050.25",
+        "close": "5050.25",
+        "adj_close": "4933.9365",
+        "volume": "0"
+      },
+      "after": {
+        "open": "5066.20",
+        "high": "5145.00",
+        "low": "5065.70",
+        "close": "5127.40",
+        "volume": "328246"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "ETERNAL",
+      "reason": "placeholder",
+      "source": "bhavcopy_missing_symbol",
+      "before": null,
+      "after": null
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "GAIL",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "156.58",
+        "high": "156.58",
+        "low": "156.58",
+        "close": "156.58",
+        "adj_close": "150.5391",
+        "volume": "0"
+      },
+      "after": {
+        "open": "157.60",
+        "high": "164.25",
+        "low": "157.10",
+        "close": "163.00",
+        "volume": "12630804"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "GODREJCP",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "1052.3",
+        "high": "1052.3",
+        "low": "1052.3",
+        "close": "1052.3",
+        "adj_close": "1024.0259",
+        "volume": "0"
+      },
+      "after": {
+        "open": "1064.55",
+        "high": "1090.75",
+        "low": "1064.55",
+        "close": "1083.65",
+        "volume": "2584183"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "GRASIM",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "2399.3501",
+        "high": "2399.3501",
+        "low": "2399.3501",
+        "close": "2399.3501",
+        "adj_close": "2383.229",
+        "volume": "0"
+      },
+      "after": {
+        "open": "2402.35",
+        "high": "2428.00",
+        "low": "2397.00",
+        "close": "2421.65",
+        "volume": "423611"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "HCLTECH",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "1545.15",
+        "high": "1545.15",
+        "low": "1545.15",
+        "close": "1545.15",
+        "adj_close": "1449.988",
+        "volume": "0"
+      },
+      "after": {
+        "open": "1545.15",
+        "high": "1560.95",
+        "low": "1530.65",
+        "close": "1558.20",
+        "volume": "2930865"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "HDFCAMC",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "1873.325",
+        "high": "1873.325",
+        "low": "1873.325",
+        "close": "1873.325",
+        "adj_close": "1799.4589",
+        "volume": "0"
+      },
+      "after": {
+        "open": "3752.40",
+        "high": "3839.00",
+        "low": "3743.65",
+        "close": "3827.60",
+        "volume": "416479"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "HDFCBANK",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "855.2",
+        "high": "855.2",
+        "low": "855.2",
+        "close": "855.2",
+        "adj_close": "830.0656",
+        "volume": "0"
+      },
+      "after": {
+        "open": "1728.00",
+        "high": "1737.40",
+        "low": "1715.05",
+        "close": "1732.20",
+        "volume": "10953589"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "HDFCLIFE",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "629.8",
+        "high": "629.8",
+        "low": "629.8",
+        "close": "629.8",
+        "adj_close": "625.8334",
+        "volume": "0"
+      },
+      "after": {
+        "open": "631.15",
+        "high": "641.65",
+        "low": "629.15",
+        "close": "640.55",
+        "volume": "2094678"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "HINDALCO",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "680.75",
+        "high": "680.75",
+        "low": "680.75",
+        "close": "680.75",
+        "adj_close": "672.2869",
+        "volume": "0"
+      },
+      "after": {
+        "open": "689.25",
+        "high": "701.00",
+        "low": "685.95",
+        "close": "697.85",
+        "volume": "5954283"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "HAL",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "3439.8999",
+        "high": "3439.8999",
+        "low": "3439.8999",
+        "close": "3439.8999",
+        "adj_close": "3393.2271",
+        "volume": "0"
+      },
+      "after": {
+        "open": "3500.00",
+        "high": "3589.80",
+        "low": "3470.55",
+        "close": "3579.95",
+        "volume": "2024740"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "HINDUNILVR",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "2171.25",
+        "high": "2171.25",
+        "low": "2171.25",
+        "close": "2171.25",
+        "adj_close": "2110.4292",
+        "volume": "0"
+      },
+      "after": {
+        "open": "2189.65",
+        "high": "2215.00",
+        "low": "2175.00",
+        "close": "2201.40",
+        "volume": "1475585"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "HINDZINC",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "435.35",
+        "high": "435.35",
+        "low": "435.35",
+        "close": "435.35",
+        "adj_close": "419.2036",
+        "volume": "0"
+      },
+      "after": {
+        "open": "437.80",
+        "high": "439.75",
+        "low": "435.25",
+        "close": "436.40",
+        "volume": "1323931"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "HYUNDAI",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "1598.35",
+        "high": "1598.35",
+        "low": "1598.35",
+        "close": "1598.35",
+        "adj_close": "1568.0432",
+        "volume": "0"
+      },
+      "after": {
+        "open": "1600.45",
+        "high": "1607.25",
+        "low": "1551.30",
+        "close": "1580.15",
+        "volume": "2189270"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "ICICIBANK",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "1269",
+        "high": "1269",
+        "low": "1269",
+        "close": "1269",
+        "adj_close": "1248.7557",
+        "volume": "0"
+      },
+      "after": {
+        "open": "1285.50",
+        "high": "1313.85",
+        "low": "1280.65",
+        "close": "1309.85",
+        "volume": "15645427"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "INDHOTEL",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "753.3",
+        "high": "753.3",
+        "low": "753.3",
+        "close": "753.3",
+        "adj_close": "747.7612",
+        "volume": "0"
+      },
+      "after": {
+        "open": "755.00",
+        "high": "792.90",
+        "low": "755.00",
+        "close": "786.25",
+        "volume": "3471961"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "IOC",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "124.11",
+        "high": "124.11",
+        "low": "124.11",
+        "close": "124.11",
+        "adj_close": "115.3739",
+        "volume": "0"
+      },
+      "after": {
+        "open": "124.50",
+        "high": "125.50",
+        "low": "123.68",
+        "close": "125.15",
+        "volume": "8940367"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "IRFC",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "118.77",
+        "high": "118.77",
+        "low": "118.77",
+        "close": "118.77",
+        "adj_close": "115.8102",
+        "volume": "0"
+      },
+      "after": {
+        "open": "119.50",
+        "high": "122.28",
+        "low": "118.83",
+        "close": "121.80",
+        "volume": "15273942"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "INFY",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "1590.05",
+        "high": "1590.05",
+        "low": "1590.05",
+        "close": "1590.05",
+        "adj_close": "1511.6353",
+        "volume": "0"
+      },
+      "after": {
+        "open": "1597.65",
+        "high": "1612.90",
+        "low": "1582.35",
+        "close": "1609.35",
+        "volume": "6298054"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "INDIGO",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "4780.4502",
+        "high": "4780.4502",
+        "low": "4780.4502",
+        "close": "4780.4502",
+        "adj_close": "4772.3853",
+        "volume": "0"
+      },
+      "after": {
+        "open": "4792.45",
+        "high": "4824.80",
+        "low": "4717.25",
+        "close": "4806.25",
+        "volume": "779629"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "JSWSTEEL",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "1005.7",
+        "high": "1005.7",
+        "low": "1005.7",
+        "close": "1005.7",
+        "adj_close": "997.2709",
+        "volume": "0"
+      },
+      "after": {
+        "open": "1014.90",
+        "high": "1020.65",
+        "low": "1002.55",
+        "close": "1018.05",
+        "volume": "1069485"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "JINDALSTEL",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "897.25",
+        "high": "897.25",
+        "low": "897.25",
+        "close": "897.25",
+        "adj_close": "893.8729",
+        "volume": "0"
+      },
+      "after": {
+        "open": "905.80",
+        "high": "927.00",
+        "low": "898.20",
+        "close": "923.50",
+        "volume": "1363602"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "JIOFIN",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "219.52",
+        "high": "219.52",
+        "low": "219.52",
+        "close": "219.52",
+        "adj_close": "218.6661",
+        "volume": "0"
+      },
+      "after": {
+        "open": "221.10",
+        "high": "225.50",
+        "low": "220.71",
+        "close": "225.18",
+        "volume": "28081319"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "KOTAKBANK",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "398.62",
+        "high": "398.62",
+        "low": "398.62",
+        "close": "398.62",
+        "adj_close": "397.4747",
+        "volume": "0"
+      },
+      "after": {
+        "open": "2000.00",
+        "high": "2039.00",
+        "low": "1988.60",
+        "close": "2034.00",
+        "volume": "5384288"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "LTM",
+      "reason": "placeholder",
+      "source": "bhavcopy_missing_symbol",
+      "before": null,
+      "after": null
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "LT",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "3173.45",
+        "high": "3173.45",
+        "low": "3173.45",
+        "close": "3173.45",
+        "adj_close": "3113.7139",
+        "volume": "0"
+      },
+      "after": {
+        "open": "3194.00",
+        "high": "3278.65",
+        "low": "3189.30",
+        "close": "3270.70",
+        "volume": "2029984"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "LODHA",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "1064",
+        "high": "1064",
+        "low": "1064",
+        "close": "1064",
+        "adj_close": "1056.7917",
+        "volume": "0"
+      },
+      "after": {
+        "open": "1069.60",
+        "high": "1116.50",
+        "low": "1059.65",
+        "close": "1112.10",
+        "volume": "1347118"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "M&M",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "2705.1499",
+        "high": "2705.1499",
+        "low": "2705.1499",
+        "close": "2705.1499",
+        "adj_close": "2655.7009",
+        "volume": "0"
+      },
+      "after": {
+        "open": "2732.30",
+        "high": "2798.00",
+        "low": "2715.05",
+        "close": "2791.40",
+        "volume": "3522624"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "MARUTI",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "11553.7002",
+        "high": "11553.7002",
+        "low": "11553.7002",
+        "close": "11553.7002",
+        "adj_close": "11316.3379",
+        "volume": "0"
+      },
+      "after": {
+        "open": "11560.05",
+        "high": "11755.45",
+        "low": "11501.00",
+        "close": "11714.55",
+        "volume": "373219"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "MAXHEALTH",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "997.9",
+        "high": "997.9",
+        "low": "997.9",
+        "close": "997.9",
+        "adj_close": "994.9816",
+        "volume": "0"
+      },
+      "after": {
+        "open": "1001.95",
+        "high": "1020.85",
+        "low": "990.10",
+        "close": "1016.95",
+        "volume": "1188427"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "MAZDOCK",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "2322.05",
+        "high": "2322.05",
+        "low": "2322.05",
+        "close": "2322.05",
+        "adj_close": "2300.9331",
+        "volume": "0"
+      },
+      "after": {
+        "open": "2344.00",
+        "high": "2388.60",
+        "low": "2331.00",
+        "close": "2376.50",
+        "volume": "2289883"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "MUTHOOTFIN",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "2290.2",
+        "high": "2290.2",
+        "low": "2290.2",
+        "close": "2290.2",
+        "adj_close": "2243.5408",
+        "volume": "0"
+      },
+      "after": {
+        "open": "2290.20",
+        "high": "2330.00",
+        "low": "2289.10",
+        "close": "2317.90",
+        "volume": "657780"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "NTPC",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "331.65",
+        "high": "331.65",
+        "low": "331.65",
+        "close": "331.65",
+        "adj_close": "319.6693",
+        "volume": "0"
+      },
+      "after": {
+        "open": "333.30",
+        "high": "337.90",
+        "low": "331.35",
+        "close": "337.35",
+        "volume": "8580255"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "NESTLEIND",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "1087.175",
+        "high": "1087.175",
+        "low": "1087.175",
+        "close": "1087.175",
+        "adj_close": "1071.6577",
+        "volume": "0"
+      },
+      "after": {
+        "open": "2178.00",
+        "high": "2206.10",
+        "low": "2170.00",
+        "close": "2202.05",
+        "volume": "423776"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "ONGC",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "229.74",
+        "high": "229.74",
+        "low": "229.74",
+        "close": "229.74",
+        "adj_close": "217.0204",
+        "volume": "0"
+      },
+      "after": {
+        "open": "230.84",
+        "high": "232.50",
+        "low": "228.52",
+        "close": "232.12",
+        "volume": "9647391"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "PIDILITIND",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "1374.45",
+        "high": "1374.45",
+        "low": "1374.45",
+        "close": "1374.45",
+        "adj_close": "1355.3226",
+        "volume": "0"
+      },
+      "after": {
+        "open": "2757.95",
+        "high": "2761.50",
+        "low": "2721.10",
+        "close": "2729.15",
+        "volume": "288689"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "PFC",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "389.7",
+        "high": "389.7",
+        "low": "389.7",
+        "close": "389.7",
+        "adj_close": "363.0501",
+        "volume": "0"
+      },
+      "after": {
+        "open": "393.90",
+        "high": "404.30",
+        "low": "392.45",
+        "close": "401.90",
+        "volume": "5852682"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "POWERGRID",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "267.35",
+        "high": "267.35",
+        "low": "267.35",
+        "close": "267.35",
+        "adj_close": "257.6877",
+        "volume": "0"
+      },
+      "after": {
+        "open": "269.15",
+        "high": "272.40",
+        "low": "267.30",
+        "close": "270.80",
+        "volume": "8899126"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "PNB",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "87.47",
+        "high": "87.47",
+        "low": "87.47",
+        "close": "87.47",
+        "adj_close": "82.6048",
+        "volume": "0"
+      },
+      "after": {
+        "open": "88.00",
+        "high": "89.50",
+        "low": "87.65",
+        "close": "88.95",
+        "volume": "15997074"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "RECLTD",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "412.9",
+        "high": "412.9",
+        "low": "412.9",
+        "close": "412.9",
+        "adj_close": "382.4247",
+        "volume": "0"
+      },
+      "after": {
+        "open": "416.75",
+        "high": "422.00",
+        "low": "414.85",
+        "close": "421.55",
+        "volume": "6319233"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "RELIANCE",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "1238.85",
+        "high": "1238.85",
+        "low": "1238.85",
+        "close": "1238.85",
+        "adj_close": "1228.2428",
+        "volume": "0"
+      },
+      "after": {
+        "open": "1244.70",
+        "high": "1248.35",
+        "low": "1235.00",
+        "close": "1238.80",
+        "volume": "15745877"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "SBILIFE",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "1434.25",
+        "high": "1434.25",
+        "low": "1434.25",
+        "close": "1434.25",
+        "adj_close": "1432.259",
+        "volume": "0"
+      },
+      "after": {
+        "open": "1452.70",
+        "high": "1458.80",
+        "low": "1431.05",
+        "close": "1457.50",
+        "volume": "656130"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "MOTHERSON",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "80.66",
+        "high": "80.66",
+        "low": "80.66",
+        "close": "80.66",
+        "adj_close": "79.7803",
+        "volume": "0"
+      },
+      "after": {
+        "open": "121.90",
+        "high": "125.80",
+        "low": "121.50",
+        "close": "125.38",
+        "volume": "11974671"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "SHREECEM",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "27734.5996",
+        "high": "27734.5996",
+        "low": "27734.5996",
+        "close": "27734.5996",
+        "adj_close": "27530.7715",
+        "volume": "0"
+      },
+      "after": {
+        "open": "27899.95",
+        "high": "28008.60",
+        "low": "27591.05",
+        "close": "27824.70",
+        "volume": "42216"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "SHRIRAMFIN",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "623.25",
+        "high": "623.25",
+        "low": "623.25",
+        "close": "623.25",
+        "adj_close": "613.2397",
+        "volume": "0"
+      },
+      "after": {
+        "open": "630.00",
+        "high": "645.70",
+        "low": "626.05",
+        "close": "642.30",
+        "volume": "6915463"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "SIEMENS",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "2897.6936",
+        "high": "2897.6936",
+        "low": "2897.6936",
+        "close": "2897.6936",
+        "adj_close": "2883.5239",
+        "volume": "0"
+      },
+      "after": {
+        "open": "4968.70",
+        "high": "5116.20",
+        "low": "4949.20",
+        "close": "5107.60",
+        "volume": "259115"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "SOLARINDS",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "10088.6504",
+        "high": "10088.6504",
+        "low": "10088.6504",
+        "close": "10088.6504",
+        "adj_close": "10076.6611",
+        "volume": "0"
+      },
+      "after": {
+        "open": "10109.60",
+        "high": "10165.10",
+        "low": "9981.10",
+        "close": "10085.65",
+        "volume": "82563"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "SBIN",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "723.15",
+        "high": "723.15",
+        "low": "723.15",
+        "close": "723.15",
+        "adj_close": "696.3633",
+        "volume": "0"
+      },
+      "after": {
+        "open": "726.60",
+        "high": "738.45",
+        "low": "722.60",
+        "close": "736.70",
+        "volume": "8087710"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "SUNPHARMA",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "1704.3",
+        "high": "1704.3",
+        "low": "1704.3",
+        "close": "1704.3",
+        "adj_close": "1683.3331",
+        "volume": "0"
+      },
+      "after": {
+        "open": "1714.35",
+        "high": "1752.00",
+        "low": "1700.00",
+        "close": "1747.80",
+        "volume": "2730980"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "TVSMOTOR",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "2266.8",
+        "high": "2266.8",
+        "low": "2266.8",
+        "close": "2266.8",
+        "adj_close": "2249.5762",
+        "volume": "0"
+      },
+      "after": {
+        "open": "2279.00",
+        "high": "2334.50",
+        "low": "2263.55",
+        "close": "2311.75",
+        "volume": "858952"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "TCS",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "3497.7",
+        "high": "3497.7",
+        "low": "3497.7",
+        "close": "3497.7",
+        "adj_close": "3317.4429",
+        "volume": "0"
+      },
+      "after": {
+        "open": "3502.35",
+        "high": "3556.95",
+        "low": "3478.45",
+        "close": "3552.45",
+        "volume": "3069109"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "TATACONSUM",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "940.45",
+        "high": "940.45",
+        "low": "940.45",
+        "close": "940.45",
+        "adj_close": "925.6983",
+        "volume": "0"
+      },
+      "after": {
+        "open": "941.05",
+        "high": "950.60",
+        "low": "938.15",
+        "close": "946.85",
+        "volume": "2343994"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "TMPV",
+      "reason": "placeholder",
+      "source": "bhavcopy_missing_symbol",
+      "before": null,
+      "after": null
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "TATAPOWER",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "350.75",
+        "high": "350.75",
+        "low": "350.75",
+        "close": "350.75",
+        "adj_close": "346.5504",
+        "volume": "0"
+      },
+      "after": {
+        "open": "352.05",
+        "high": "363.70",
+        "low": "351.80",
+        "close": "362.70",
+        "volume": "7096285"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "TATASTEEL",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "151.81",
+        "high": "151.81",
+        "low": "151.81",
+        "close": "151.81",
+        "adj_close": "145.3528",
+        "volume": "0"
+      },
+      "after": {
+        "open": "153.00",
+        "high": "154.83",
+        "low": "152.22",
+        "close": "154.66",
+        "volume": "38125586"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "TECHM",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "1440.1",
+        "high": "1440.1",
+        "low": "1440.1",
+        "close": "1440.1",
+        "adj_close": "1364.1543",
+        "volume": "0"
+      },
+      "after": {
+        "open": "1446.25",
+        "high": "1453.00",
+        "low": "1426.55",
+        "close": "1430.65",
+        "volume": "3280540"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "TITAN",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "3017.3501",
+        "high": "3017.3501",
+        "low": "3017.3501",
+        "close": "3017.3501",
+        "adj_close": "2998.4578",
+        "volume": "0"
+      },
+      "after": {
+        "open": "3030.75",
+        "high": "3088.00",
+        "low": "3015.40",
+        "close": "3081.70",
+        "volume": "865951"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "TORNTPHARM",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "3066.3501",
+        "high": "3066.3501",
+        "low": "3066.3501",
+        "close": "3066.3501",
+        "adj_close": "3033.6641",
+        "volume": "0"
+      },
+      "after": {
+        "open": "3091.75",
+        "high": "3144.40",
+        "low": "3049.20",
+        "close": "3135.70",
+        "volume": "245862"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "TRENT",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "5159.5498",
+        "high": "5159.5498",
+        "low": "5159.5498",
+        "close": "5159.5498",
+        "adj_close": "5148.9644",
+        "volume": "0"
+      },
+      "after": {
+        "open": "5185.30",
+        "high": "5285.40",
+        "low": "5171.45",
+        "close": "5260.25",
+        "volume": "994888"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "ULTRACEMCO",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "10547.0996",
+        "high": "10547.0996",
+        "low": "10547.0996",
+        "close": "10547.0996",
+        "adj_close": "10271.0176",
+        "volume": "0"
+      },
+      "after": {
+        "open": "10570.00",
+        "high": "10745.00",
+        "low": "10551.00",
+        "close": "10698.10",
+        "volume": "354620"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "UNIONBANK",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "112.54",
+        "high": "112.54",
+        "low": "112.54",
+        "close": "112.54",
+        "adj_close": "105.7309",
+        "volume": "0"
+      },
+      "after": {
+        "open": "113.70",
+        "high": "118.17",
+        "low": "113.22",
+        "close": "117.70",
+        "volume": "8340695"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "UNITDSPR",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "1353.05",
+        "high": "1353.05",
+        "low": "1353.05",
+        "close": "1353.05",
+        "adj_close": "1324.9822",
+        "volume": "0"
+      },
+      "after": {
+        "open": "1359.90",
+        "high": "1371.00",
+        "low": "1354.00",
+        "close": "1367.45",
+        "volume": "594495"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "VBL",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "507.25",
+        "high": "507.25",
+        "low": "507.25",
+        "close": "507.25",
+        "adj_close": "504.1342",
+        "volume": "0"
+      },
+      "after": {
+        "open": "514.25",
+        "high": "536.00",
+        "low": "512.75",
+        "close": "532.50",
+        "volume": "14460723"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "VEDL",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "446.95",
+        "high": "446.95",
+        "low": "446.95",
+        "close": "446.95",
+        "adj_close": "417.3905",
+        "volume": "0"
+      },
+      "after": {
+        "open": "450.95",
+        "high": "460.80",
+        "low": "449.05",
+        "close": "460.00",
+        "volume": "8039342"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "WIPRO",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "259.85",
+        "high": "259.85",
+        "low": "259.85",
+        "close": "259.85",
+        "adj_close": "245.6186",
+        "volume": "0"
+      },
+      "after": {
+        "open": "261.75",
+        "high": "263.05",
+        "low": "259.40",
+        "close": "261.25",
+        "volume": "11450247"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "symbol": "ZYDUSLIFE",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-03-18",
+        "open": "892.7",
+        "high": "892.7",
+        "low": "892.7",
+        "close": "892.7",
+        "adj_close": "881.7972",
+        "volume": "0"
+      },
+      "after": {
+        "open": "898.00",
+        "high": "905.50",
+        "low": "893.80",
+        "close": "902.15",
+        "volume": "719728"
+      }
+    },
+    {
+      "date": "2025-04-11",
+      "symbol": "ETERNAL",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-04-11",
+        "open": "211.39",
+        "high": "211.39",
+        "low": "211.39",
+        "close": "211.39",
+        "adj_close": "211.39",
+        "volume": "0"
+      },
+      "after": {
+        "open": "216.00",
+        "high": "218.31",
+        "low": "214.10",
+        "close": "217.20",
+        "volume": "28917549"
+      }
+    },
+    {
+      "date": "2025-04-15",
+      "symbol": "ETERNAL",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-04-15",
+        "open": "211.39",
+        "high": "211.39",
+        "low": "211.39",
+        "close": "211.39",
+        "adj_close": "211.39",
+        "volume": "0"
+      },
+      "after": {
+        "open": "224.25",
+        "high": "224.25",
+        "low": "220.10",
+        "close": "222.23",
+        "volume": "45034496"
+      }
+    },
+    {
+      "date": "2025-09-08",
+      "symbol": "M&M",
+      "reason": "placeholder",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2025-09-08",
+        "open": "3561.3",
+        "high": "3561.3",
+        "low": "3561.3",
+        "close": "3561.3",
+        "adj_close": "3524.2898",
+        "volume": "0"
+      },
+      "after": {
+        "open": "3585.00",
+        "high": "3715.20",
+        "low": "3579.10",
+        "close": "3701.40",
+        "volume": "4623789"
+      }
+    },
+    {
+      "date": "2025-10-14",
+      "symbol": "TMPV",
+      "reason": "bad_level",
+      "source": "bhavcopy_missing_symbol",
+      "before": null,
+      "after": null
+    },
+    {
+      "date": "2026-04-30",
+      "symbol": "VEDL",
+      "reason": "bad_level",
+      "source": "nse_bhavcopy",
+      "before": {
+        "date": "2026-04-30",
+        "open": "289.5",
+        "high": "292",
+        "low": "268.7",
+        "close": "271.55",
+        "adj_close": "271.55",
+        "volume": "73870853"
+      },
+      "after": {
+        "open": "289.50",
+        "high": "292.00",
+        "low": "268.70",
+        "close": "271.55",
+        "volume": "73870853"
+      }
+    }
+  ]
+}

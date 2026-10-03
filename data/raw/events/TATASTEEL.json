@@ -1,6 +1,26 @@
 {
   "dividends": [
     {
+      "date": "2020-08-06",
+      "amount": 1
+    },
+    {
+      "date": "2021-06-17",
+      "amount": 2.5
+    },
+    {
+      "date": "2022-06-15",
+      "amount": 5.1
+    },
+    {
+      "date": "2023-06-22",
+      "amount": 3.6
+    },
+    {
+      "date": "2024-06-21",
+      "amount": 3.6
+    },
+    {
       "date": "2025-06-06",
       "amount": 3.6
     },
@@ -9,5 +29,12 @@
       "amount": 4
     }
   ],
-  "splits": []
+  "splits": [
+    {
+      "date": "2022-07-28",
+      "numerator": 10,
+      "denominator": 1,
+      "splitRatio": "10:1"
+    }
+  ]
 }

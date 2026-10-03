@@ -1,6 +1,42 @@
 {
   "dividends": [
     {
+      "date": "2021-02-15",
+      "amount": 10
+    },
+    {
+      "date": "2021-06-17",
+      "amount": 7.5
+    },
+    {
+      "date": "2022-02-02",
+      "amount": 12.5
+    },
+    {
+      "date": "2022-06-03",
+      "amount": 11.5
+    },
+    {
+      "date": "2023-02-03",
+      "amount": 14
+    },
+    {
+      "date": "2023-06-23",
+      "amount": 8
+    },
+    {
+      "date": "2024-02-12",
+      "amount": 22
+    },
+    {
+      "date": "2024-06-21",
+      "amount": 6
+    },
+    {
+      "date": "2025-01-31",
+      "amount": 26
+    },
+    {
       "date": "2025-06-20",
       "amount": 6
     },
@@ -13,5 +49,12 @@
       "amount": 9
     }
   ],
-  "splits": []
+  "splits": [
+    {
+      "date": "2022-07-08",
+      "numerator": 2,
+      "denominator": 1,
+      "splitRatio": "2:1"
+    }
+  ]
 }
