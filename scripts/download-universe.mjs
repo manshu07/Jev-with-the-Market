@@ -19,8 +19,11 @@ const reportJsonPath = join(root, "results/phase1_data_quality.json");
 const reportMdPath = join(root, "results/phase1_data_quality.md");
 
 const PERIOD1 = dataConfig.period1;
-const PERIOD2 = dataConfig.period2_exclusive;
 const TZ = dataConfig.session_timezone;
+// period2_exclusive may be a fixed date (frozen experiment) or "today" — the daily
+// refresh needs a rolling end so each run extends the dataset to the latest session
+const PERIOD2 =
+  dataConfig.period2_exclusive === "today" ? sessionDate(new Date()) : dataConfig.period2_exclusive;
 const BENCHMARK = { yahoo: "^CNX100", file: "CNX100" };
 const FORCE = process.argv.includes("--force");
 const CONCURRENCY = 5;

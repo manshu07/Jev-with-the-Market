@@ -1,9 +1,9 @@
 {
   "source": "Yahoo Finance chart API via yahoo-finance2",
   "client_version": "4.0.2",
-  "downloaded_at_utc": "2026-10-03T01:45:43.939Z",
+  "downloaded_at_utc": "2026-10-03T11:23:40.910Z",
   "period1": "2020-05-01",
-  "period2_exclusive": "2026-09-24",
+  "period2_exclusive": "2026-10-03",
   "interval": "1d",
   "session_timezone": "Asia/Kolkata",
   "universe_label": "Fixed current NIFTY 100 universe",

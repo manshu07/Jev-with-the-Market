@@ -1,17 +1,17 @@
 # Phase 2 feature quality
 
-Generated: 3/10/2026, 07:29:00
+Generated: 3/10/2026, 16:54:31
 
-System One was not called. No portfolio was simulated.
+Jev was not called. No portfolio was simulated.
 
 ## Coverage
 
 - Stocks: 100
-- Trading sessions: 1585
-- Feature rows: 158500
-- Decision-ready rows: 122328
+- Trading sessions: 1591
+- Feature rows: 159100
+- Decision-ready rows: 122916
 - First decision-ready date: 2021-05-04
-- Last decision-ready date: 2026-09-23
+- Last decision-ready date: 2026-10-01
 - Database: `data/processed/market.duckdb`
 
 ## Formulas
@@ -42,7 +42,7 @@ The cached `close` is already split-adjusted as of the Yahoo download. That can 
 | rsi_14 | 8374 |
 | volatility_20d | 9022 |
 | volume_ratio_20d | 8914 |
-| distance_from_52w_high | 33916 |
+| distance_from_52w_high | 33928 |
 | drawdown_20d | 8914 |
 | nifty_return_20d | 3600 |
 | relative_return_20d | 10401 |
@@ -51,17 +51,17 @@ The cached `close` is already split-adjusted as of the Yahoo download. That can 
 
 | Field | Min | Median | Max |
 | --- | ---: | ---: | ---: |
-| return_1d | -0.899434 | 0.000363 | 9.119051 |
-| return_5d | -0.895569 | 0.002862 | 9.407427 |
-| return_20d | -0.893193 | 0.011986 | 9.345793 |
-| return_60d | -0.893694 | 0.036797 | 11.678421 |
-| rsi_14 | 9.74231 | 52.365498 | 99.366238 |
-| volatility_20d | 0.003449 | 0.016092 | 2.059693 |
-| volume_ratio_20d | 0.013597 | 0.8421 | 15.156365 |
-| distance_from_52w_high | -0.906587 | -0.113178 | 0 |
-| drawdown_20d | -0.901319 | -0.030977 | 0 |
-| nifty_return_20d | -0.127783 | 0.00888 | 0.131047 |
-| relative_return_20d | -0.95255 | 0.002934 | 9.345139 |
+| return_1d | -0.899434 | 0.000329 | 9.119051 |
+| return_5d | -0.895569 | 0.00273 | 9.407427 |
+| return_20d | -0.893193 | 0.011615 | 9.345793 |
+| return_60d | -0.893694 | 0.036337 | 11.678421 |
+| rsi_14 | 9.74231 | 52.29399 | 99.366238 |
+| volatility_20d | 0.003449 | 0.016083 | 2.059693 |
+| volume_ratio_20d | 0.013597 | 0.843031 | 15.156365 |
+| distance_from_52w_high | -0.906587 | -0.113582 | 0 |
+| drawdown_20d | -0.901319 | -0.031144 | 0 |
+| nifty_return_20d | -0.127783 | 0.00861 | 0.131047 |
+| relative_return_20d | -0.95255 | 0.002894 | 9.345139 |
 
 ## Stocks with no decision-ready session
 

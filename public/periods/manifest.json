@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-03T03:07:08.500Z",
+ "generatedAt": "2026-10-03T11:24:42.063Z",
  "base": "₹10,00,000 — same engine, costs and rules as the recorded experiment (momentum top-5 by 20d return, NIFTY 100 buy-and-hold, seeded random).",
  "custom_note": "Custom windows: pick any start/end inside the 5-year data; equity and monthly returns are computed client-side from equity-5y.json. Trade ledgers shown for standard periods.",
  "survivorship_note": "Current NIFTY 100 membership applied backward — survivorship bias favors momentum. Not investment advice.",

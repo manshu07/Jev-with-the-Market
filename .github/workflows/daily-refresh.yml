@@ -50,6 +50,8 @@ jobs:
 
       - name: Rebuild watchlists and periods datasets
         run: npx tsx scripts/build-watchlists-periods.ts
+      - name: Rebuild Studio dataset (prices + EMAs + benchmark)
+        run: npx tsx scripts/build-studio-data.ts
 
       - name: Commit and push (triggers Vercel deploy)
         run: |

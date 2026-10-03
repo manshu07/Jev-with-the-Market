@@ -3,7 +3,7 @@
   "client": "yahoo-finance2",
   "interval": "1d",
   "period1": "2020-05-01",
-  "period2_exclusive": "2026-09-24",
+  "period2_exclusive": "today",
   "session_timezone": "Asia/Kolkata",
   "price_fields": ["open", "high", "low", "close", "adj_close", "volume"],
   "adjustment_policy": "Store the Yahoo daily bar as returned, including adj_close. Do not treat adj_close as a point-in-time price. Phase 1 does not build features and does not send any series to Jev.",

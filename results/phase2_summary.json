@@ -1,6 +1,6 @@
 {
   "phase": 2,
-  "generated_at_ist": "3/10/2026, 07:29:00",
+  "generated_at_ist": "3/10/2026, 16:54:31",
   "jev_called": false,
   "universe_label": "Fixed current NIFTY 100 universe",
   "database": "data/processed/market.duckdb",
@@ -9,11 +9,11 @@
   "adj_close_used": false,
   "high_52w_sessions": 252,
   "stocks": 100,
-  "trading_days": 1585,
-  "feature_rows": 158500,
-  "decision_ready_rows": 122328,
+  "trading_days": 1591,
+  "feature_rows": 159100,
+  "decision_ready_rows": 122916,
   "first_decision_ready_date": "2021-05-04",
-  "last_decision_ready_date": "2026-09-23",
+  "last_decision_ready_date": "2026-10-01",
   "insufficient_history": [
     "TATACAP",
     "TMCV"
@@ -26,7 +26,7 @@
     "rsi_14": 8374,
     "volatility_20d": 9022,
     "volume_ratio_20d": 8914,
-    "distance_from_52w_high": 33916,
+    "distance_from_52w_high": 33928,
     "drawdown_20d": 8914,
     "nifty_return_20d": 3600,
     "relative_return_20d": 10401
@@ -35,67 +35,67 @@
     {
       "field": "return_1d",
       "min": -0.8994344946731933,
-      "median": 0.00036305703174233095,
+      "median": 0.0003291012792613346,
       "max": 9.119051087659594
     },
     {
       "field": "return_5d",
       "min": -0.8955686726173337,
-      "median": 0.0028615568784351453,
+      "median": 0.00272959756405311,
       "max": 9.40742694124134
     },
     {
       "field": "return_20d",
       "min": -0.8931932047221423,
-      "median": 0.011986478487432395,
+      "median": 0.011615059257582883,
       "max": 9.345793167546441
     },
     {
       "field": "return_60d",
       "min": -0.8936942124964008,
-      "median": 0.036797153912972336,
+      "median": 0.036336639947461835,
       "max": 11.6784214945424
     },
     {
       "field": "rsi_14",
       "min": 9.742309909373787,
-      "median": 52.36549750436037,
+      "median": 52.29399037757774,
       "max": 99.3662377756792
     },
     {
       "field": "volatility_20d",
       "min": 0.003449287317275322,
-      "median": 0.016092424266982926,
+      "median": 0.016083119955635286,
       "max": 2.0596927752918
     },
     {
       "field": "volume_ratio_20d",
       "min": 0.013596965507564894,
-      "median": 0.8420997530327833,
+      "median": 0.8430309051987805,
       "max": 15.156364714337661
     },
     {
       "field": "distance_from_52w_high",
       "min": -0.9065869640188527,
-      "median": -0.11317791867359323,
+      "median": -0.11358189110108341,
       "max": 0
     },
     {
       "field": "drawdown_20d",
       "min": -0.9013187446012093,
-      "median": -0.03097717072671302,
+      "median": -0.031143646325733243,
       "max": 0
     },
     {
       "field": "nifty_return_20d",
       "min": -0.12778315547285557,
-      "median": 0.008879997732276212,
+      "median": 0.008610216598111009,
       "max": 0.13104717636286356
     },
     {
       "field": "relative_return_20d",
       "min": -0.9525495300746414,
-      "median": 0.002933775875971656,
+      "median": 0.002894373420933516,
       "max": 9.345139366831827
     }
   ],
