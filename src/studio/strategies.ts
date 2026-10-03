@@ -126,7 +126,7 @@ export const STRATEGIES: Record<StrategyKey, StrategyDefinition> = {
   },
   ema_cross: {
     key: "ema_cross",
-    label: "EMA-262×365 crossover (closing prices)",
+    label: "EMA Crossover 2 (262×365, closing prices)",
     frequencyApplies: false,
     rank: emaCrossRank,
     forcedExits: emaCrossForcedExits,

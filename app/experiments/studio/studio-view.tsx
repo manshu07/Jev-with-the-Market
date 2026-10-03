@@ -8,7 +8,7 @@ const inr = (v: number) => `₹${Math.round(v).toLocaleString("en-IN")}`
 
 const STRATEGIES: { key: StrategyKey; label: string }[] = [
   { key: "momentum", label: "Base momentum" },
-  { key: "ema_cross", label: "EMA-262×365 crossover" },
+  { key: "ema_cross", label: "EMA Crossover 2" },
   { key: "systemone", label: "System One (recorded)" },
 ]
 const FREQUENCIES: FrequencyKey[] = ["close", "crossover", "session", "low", "high", "open"]
