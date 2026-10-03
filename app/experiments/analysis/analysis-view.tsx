@@ -351,7 +351,7 @@ export function AnalysisView() {
                           <td className="px-4 py-1.5">{m.month}</td>
                           <td className={`px-4 py-1.5 text-right ${m.strategy >= 0 ? "text-[#3ddc97]" : "text-[#ff6b6b]"}`}>{pct(m.strategy)}</td>
                           <td className="px-4 py-1.5 text-right">{pct(m.benchmark)}</td>
-                          <td className="px-4 py-1.5 text-right">{((m.strategy - m.benchmark) * 100).toFixed(2)}</td>
+                          <td className="px-4 py-1.5 text-right">{m.benchmark == null ? "—" : ((m.strategy - m.benchmark) * 100).toFixed(2)}</td>
                         </tr>
                       ))}
                     </tbody>
