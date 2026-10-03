@@ -307,7 +307,11 @@ export function runStudio(prices: StudioPrices, cfg: StudioConfig): StudioResult
 export function studioBenchmark(prices: StudioPrices, sessions: number): { dates: string[]; values: number[]; source: "index" | "basket" } {
   const withBench = prices as StudioPrices & { benchmark?: (number | null)[] }
   if (withBench.benchmark && withBench.benchmark.length >= Math.min(sessions, prices.dates.length)) {
-    const values = withBench.benchmark.slice(0, Math.min(sessions, prices.dates.length)).map((v) => (v == null ? 1_000_000 : v))
+    const raw = withBench.benchmark.slice(0, Math.min(sessions, prices.dates.length))
+    // rebase to the slice start so every window compares against ₹10,00,000 fairly
+    const firstIdx = raw.findIndex((v) => v != null && v > 0)
+    const base = firstIdx >= 0 ? raw[firstIdx]! : 1_000_000
+    const values = raw.map((v) => (v == null ? 1_000_000 : Math.round((1_000_000 * v) / base * 100) / 100))
     return { dates: prices.dates.slice(0, Math.min(sessions, prices.dates.length)), values, source: "index" }
   }
   const n = prices.tickers.length

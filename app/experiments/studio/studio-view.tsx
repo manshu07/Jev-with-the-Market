@@ -27,6 +27,7 @@ export function StudioView() {
   const [years, setYears] = useState(5)
   const [customWindow, setCustomWindow] = useState(false)
   const [startIdx, setStartIdx] = useState(0)
+  const [endIdx, setEndIdx] = useState(0)
   const [sessions, setSessions] = useState(0) // 0 = auto from period
   const [strategy, setStrategy] = useState<StrategyKey>("momentum")
   const [frequency, setFrequency] = useState<FrequencyKey>("close")
@@ -43,15 +44,34 @@ export function StudioView() {
       })
       .then((d: Data) => {
         setData(d)
-        setStartIdx(d.dates.length - 1)
+        setStartIdx(0)
+        setEndIdx(d.dates.length - 1)
       })
       .catch((e) => setError(String(e)))
   }, [])
 
-  const slice = useMemo(() => {
+  // window bounds are DATE-derived (calendar years back from the latest session),
+  // never a hardcoded sessions-per-year constant
+  const dateBounds = useMemo(() => {
     if (!data) return null
-    const start = customWindow ? startIdx : Math.max(0, data.dates.length - Math.round(years * 246))
-    const count = customWindow && sessions > 0 ? Math.min(sessions, data.dates.length - start) : data.dates.length - start
+    const last = data.dates[data.dates.length - 1]
+    const boundsFor = (years: number) => {
+      const d = new Date(last)
+      d.setFullYear(d.getFullYear() - years)
+      const target = d.toISOString().slice(0, 10)
+      const i = data.dates.findIndex((x) => x >= target)
+      return i < 0 ? 0 : i
+    }
+    return { last, boundsFor }
+  }, [data])
+
+  const slice = useMemo(() => {
+    if (!data || !dateBounds) return null
+    const start = customWindow ? startIdx : dateBounds.boundsFor(years)
+    const end = customWindow && endIdx > startIdx ? endIdx : data.dates.length - 1
+    const available = end - start + 1
+    // sessions override caps the window in EVERY mode (auto = full window)
+    const count = sessions > 0 ? Math.min(sessions, available) : available
     const take = <T,>(g: T[][]) => g.slice(start, start + count)
     const ema = (arr: (number | null)[][]) => arr.slice(start, start + count)
     return {
@@ -67,7 +87,7 @@ export function StudioView() {
       benchmark: data.benchmark.slice(start, start + count),
       decisions: Object.fromEntries(Object.entries(data.decisions).filter(([d]) => d >= data.dates[start] && d <= data.dates[Math.min(data.dates.length - 1, start + count - 1)])),
     } as StudioPrices
-  }, [data, years, customWindow, startIdx, sessions])
+  }, [data, years, customWindow, startIdx, endIdx, sessions, dateBounds])
 
   const result = useMemo(() => {
     if (!slice) return null
@@ -154,20 +174,36 @@ export function StudioView() {
                   </button>
                 </div>
                 {customWindow && (
-                  <label className="mt-2 block text-[10px] tracking-[0.16em] text-[#9aa4b8]">
-                    START DATE
-                    <input
-                      type="date"
-                      min={data.dates[0]}
-                      max={data.dates.at(-1)}
-                      value={data.dates[startIdx] ?? ""}
-                      onChange={(e) => {
-                        const i = data.dates.indexOf(e.target.value)
-                        if (i >= 0) setStartIdx(i)
-                      }}
-                      className="mt-1 block w-full rounded-md border border-white/15 bg-[#161b22] px-2 py-1.5 text-sm normal-case tracking-normal"
-                    />
-                  </label>
+                  <div className="mt-2 space-y-2">
+                    <label className="block text-[10px] tracking-[0.16em] text-[#9aa4b8]">
+                      START DATE
+                      <input
+                        type="date"
+                        min={data.dates[0]}
+                        max={data.dates.at(-1)}
+                        value={data.dates[startIdx] ?? ""}
+                        onChange={(e) => {
+                          const i = data.dates.indexOf(e.target.value)
+                          if (i >= 0) setStartIdx(i)
+                        }}
+                        className="mt-1 block w-full rounded-md border border-white/15 bg-[#161b22] px-2 py-1.5 text-sm normal-case tracking-normal"
+                      />
+                    </label>
+                    <label className="block text-[10px] tracking-[0.16em] text-[#9aa4b8]">
+                      END DATE
+                      <input
+                        type="date"
+                        min={data.dates[startIdx]}
+                        max={data.dates.at(-1)}
+                        value={data.dates[endIdx] ?? ""}
+                        onChange={(e) => {
+                          const i = data.dates.indexOf(e.target.value)
+                          if (i > startIdx) setEndIdx(i)
+                        }}
+                        className="mt-1 block w-full rounded-md border border-white/15 bg-[#161b22] px-2 py-1.5 text-sm normal-case tracking-normal"
+                      />
+                    </label>
+                  </div>
                 )}
               </div>
 
