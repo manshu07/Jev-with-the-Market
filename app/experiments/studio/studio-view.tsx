@@ -7,13 +7,10 @@ const pct = (x: number) => `${(x * 100).toFixed(2)}%`
 const inr = (v: number) => `₹${Math.round(v).toLocaleString("en-IN")}`
 
 const STRATEGIES: { key: StrategyKey; label: string }[] = [
-  { key: "momentum", label: "Momentum (top-5 by 20d return)" },
-  { key: "ema262", label: "EMA-262 watchlist" },
-  { key: "ema365", label: "EMA-365 watchlist" },
-  { key: "both_ema", label: "Both EMAs (262 ∧ 365)" },
-  { key: "systemone", label: "System One (recorded decisions)" },
+  { key: "momentum", label: "Base momentum" },
+  { key: "ema_cross", label: "EMA-262×365 crossover" },
+  { key: "systemone", label: "System One (recorded)" },
 ]
-
 const FREQUENCIES: FrequencyKey[] = ["close", "crossover", "session", "low", "high", "open"]
 
 type Data = StudioPrices & { warmup: string; benchmark: (number | null)[] }
@@ -22,7 +19,6 @@ export function StudioView() {
   const [data, setData] = useState<Data | null>(null)
   const [error, setError] = useState<string | null>(null)
 
-  // config state
   const [years, setYears] = useState(5)
   const [customWindow, setCustomWindow] = useState(false)
   const [startIdx, setStartIdx] = useState(0)
@@ -295,11 +291,15 @@ export function StudioView() {
 
               {/* DECISION FREQUENCY */}
               <div>
-                <label className="block text-[10px] tracking-[0.16em] text-[#9aa4b8]">DECISION FREQUENCY</label>
+                <label className="block text-[10px] tracking-[0.16em] text-[#9aa4b8]">
+                  DECISION FREQUENCY
+                  {strategy === "ema_cross" && <span className="ml-1 normal-case tracking-normal text-[#3ddc97]">(fixed: closing prices — crossover strategy)</span>}
+                </label>
                 <select
                   value={frequency}
+                  disabled={strategy === "ema_cross"}
                   onChange={(e) => setFrequency(e.target.value as FrequencyKey)}
-                  className="mt-1 block w-full rounded-md border border-white/15 bg-[#161b22] px-3 py-2 text-sm"
+                  className="mt-1 block w-full rounded-md border border-white/15 bg-[#161b22] px-3 py-2 text-sm disabled:opacity-50"
                 >
                   {FREQUENCIES.map((f) => (
                     <option key={f} value={f}>

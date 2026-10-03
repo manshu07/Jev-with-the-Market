@@ -55,6 +55,23 @@ export async function POST(request: Request) {
   if (!config || !window || !clientSummary) {
     return NextResponse.json({ error: "config, window and clientSummary are required" }, { status: 400 })
   }
+  const strategyKeys = ["momentum", "ema_cross", "systemone"] as const
+  if (!strategyKeys.includes(config.strategy)) {
+    return NextResponse.json({ error: `unknown strategy '${config.strategy}' — valid: ${strategyKeys.join(", ")}` }, { status: 400 })
+  }
+  const freqKeys = ["close", "crossover", "session", "low", "high", "open"] as const
+  if (!freqKeys.includes(config.frequency)) {
+    return NextResponse.json({ error: `unknown frequency '${config.frequency}'` }, { status: 400 })
+  }
+  const numeric = clientSummary as unknown as Record<string, unknown>
+  for (const key of ["finalValue", "totalReturn", "maxDrawdown", "buyCount", "sellCount"]) {
+    if (typeof numeric[key] !== "number" || !Number.isFinite(numeric[key] as number)) {
+      return NextResponse.json({ error: `clientSummary.${key} must be a finite number` }, { status: 400 })
+    }
+  }
+  if (!(config.sessions > 0) || !(config.maxWeight > 0) || config.cost < 0 || config.slippage < 0 || !(config.maxPositions > 0)) {
+    return NextResponse.json({ error: "config numeric fields are invalid (sessions/maxWeight/maxPositions must be > 0, cost/slippage ≥ 0)" }, { status: 400 })
+  }
 
   const data = loadDataset()
   const startIdx = data.dates.findIndex((d) => d >= window.start)

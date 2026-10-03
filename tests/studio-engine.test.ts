@@ -57,26 +57,39 @@ describe("runStudio", () => {
     expect(out.days).toHaveLength(3)
   })
 
-  it("crossover frequency enters only on membership flip days", () => {
-    // AAA below EMA on day1, above from day2 → flip on day2 → BUY executes day3.
-    const ema = DATES.map((_, i) => (i === 0 ? [500, 500] : [90, 500]))
-    const prices = makePrices({ ema: { "262": ema, "365": DATES.map(() => [500, 500]) } })
-    const out = runStudio(prices, { ...baseConfig, strategy: "ema262", frequency: "crossover" })
+  it("ema_cross enters on golden cross (262 over 365, closing prices), exits on death cross", () => {
+    // fast EMA 90→110 crosses slow EMA 100 on day2 (golden); then 90 vs 100 on day4 (death)
+    const fast = [90, 110, 110, 90, 90, 90].map((v) => [v, 500])
+    const slow = DATES.map(() => [100, 500])
+    const prices = makePrices({ ema: { "262": fast, "365": slow } })
+    const out = runStudio(prices, { ...baseConfig, strategy: "ema_cross", frequency: "close" })
     const buys = out.trades.filter((t) => t.action === "BUY")
+    const sells = out.trades.filter((t) => t.action === "SELL")
     expect(buys).toHaveLength(1)
     expect(buys[0].ticker).toBe("AAA")
-    expect(buys[0].decisionDate).toBe("2024-01-02") // the flip day
-    expect(buys[0].date).toBe("2024-01-03") // next-session execution
+    expect(buys[0].decisionDate).toBe("2024-01-02") // golden cross day
+    expect(buys[0].date).toBe("2024-01-03") // next-session open
+    expect(sells.length).toBeGreaterThanOrEqual(1)
+    expect(sells[0].ticker).toBe("AAA") // death cross exit
   })
 
-  it("open/high/low frequency changes the evaluation price for EMA membership", () => {
-    // close 101 > ema 100.5 but low 99 < ema: low-frequency keeps AAA out
-    const ema = DATES.map(() => [100.5, 500])
-    const prices = makePrices({ ema: { "262": ema, "365": DATES.map(() => [500, 500]) } })
-    const onLow = runStudio(prices, { ...baseConfig, strategy: "ema262", frequency: "low" })
-    const onClose = runStudio(prices, { ...baseConfig, strategy: "ema262", frequency: "close" })
-    expect(onLow.trades.filter((t) => t.ticker === "AAA" && t.action === "BUY")).toHaveLength(0)
-    expect(onClose.trades.filter((t) => t.ticker === "AAA" && t.action === "BUY").length).toBeGreaterThan(0)
+  it("ema_cross skips entries while all slots are full (decision A: no rotation)", () => {
+    // two simultaneous golden crosses (AAA + BBB) but only 1 slot
+    const fast = [90, 110, 110, 110, 110, 110].map((v) => [v, v])
+    const slow = DATES.map(() => [100, 100])
+    const prices = makePrices({ ema: { "262": fast, "365": slow } })
+    const out = runStudio(prices, { ...baseConfig, strategy: "ema_cross", frequency: "close", maxPositions: 1 })
+    const buys = out.trades.filter((t) => t.action === "BUY")
+    expect(buys).toHaveLength(1) // only one entry — the other cross is skipped, not queued
+  })
+
+  it("ema_cross is frequency-immune (fixed to closing prices)", () => {
+    const fast = [90, 110, 110, 110, 110, 110].map((v) => [v, 500])
+    const slow = DATES.map(() => [100, 500])
+    const prices = makePrices({ ema: { "262": fast, "365": slow } })
+    const a = runStudio(prices, { ...baseConfig, strategy: "ema_cross", frequency: "close" })
+    const b = runStudio(prices, { ...baseConfig, strategy: "ema_cross", frequency: "high" })
+    expect(a.trades.map((t) => `${t.ticker}${t.action}`)).toEqual(b.trades.map((t) => `${t.ticker}${t.action}`))
   })
 
   it("replays stored System One decisions instead of rules", () => {

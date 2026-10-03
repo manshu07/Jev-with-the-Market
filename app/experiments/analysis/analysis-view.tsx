@@ -9,11 +9,9 @@ const pct = (x: number | null | undefined) => (x == null ? "—" : `${(x * 100).
 const inr = (v: number) => `₹${Math.round(v).toLocaleString("en-IN")}`
 
 const STRATEGIES: { key: StrategyKey; label: string }[] = [
-  { key: "momentum", label: "Momentum" },
-  { key: "ema262", label: "EMA-262" },
-  { key: "ema365", label: "EMA-365" },
-  { key: "both_ema", label: "Both EMAs" },
-  { key: "systemone", label: "System One" },
+  { key: "momentum", label: "Base momentum" },
+  { key: "ema_cross", label: "EMA-262×365 crossover" },
+  { key: "systemone", label: "System One (recorded)" },
 ]
 const FREQUENCIES: FrequencyKey[] = ["close", "crossover", "session", "low", "high", "open"]
 const HORIZONS = [1, 5, 20]
@@ -221,8 +219,11 @@ export function AnalysisView() {
                 )}
               </div>
               <div>
-                <label className="block text-[10px] tracking-[0.16em] text-[#9aa4b8]">DECISION FREQUENCY</label>
-                <select value={frequency} onChange={(e) => setFrequency(e.target.value as FrequencyKey)} className="mt-1 block w-full rounded-md border border-white/15 bg-[#161b22] px-3 py-2 text-sm">
+                <label className="block text-[10px] tracking-[0.16em] text-[#9aa4b8]">
+                  DECISION FREQUENCY
+                  {strategy === "ema_cross" && <span className="ml-1 normal-case tracking-normal text-[#3ddc97]">(fixed: closing prices — crossover strategy)</span>}
+                </label>
+                <select value={frequency} disabled={strategy === "ema_cross"} onChange={(e) => setFrequency(e.target.value as FrequencyKey)} className="mt-1 block w-full rounded-md border border-white/15 bg-[#161b22] px-3 py-2 text-sm disabled:opacity-50">
                   {FREQUENCIES.map((f) => (
                     <option key={f} value={f}>
                       {f}

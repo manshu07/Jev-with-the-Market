@@ -2,13 +2,16 @@
  * Experiment Studio engine: fully parameterised backtests over the cached
  * NIFTY 100 dataset, computed client-side (static-hosting friendly).
  *
- * Parameters: strategy, decision frequency, session count, max initial position
- * weight, transaction cost, slippage, max positions, random seed.
+ * Parameters: strategy (registry-based, see ./strategies), decision frequency,
+ * session count, max initial position weight, transaction cost, slippage,
+ * max positions, random seed.
  *
  * Pure functions only — no IO, no network.
  */
 
-export type StrategyKey = "momentum" | "ema262" | "ema365" | "both_ema" | "systemone"
+import { STRATEGIES, type StrategyKey } from "./strategies"
+
+export type { StrategyKey }
 export type FrequencyKey = "close" | "crossover" | "session" | "low" | "high" | "open"
 
 export type StudioPrices = {
@@ -88,63 +91,41 @@ function mulberry32(seed: number): () => number {
   }
 }
 
-/** The price used to evaluate "is this stock in the list today" per frequency. */
-function evalPrice(prices: StudioPrices, d: number, t: number, frequency: FrequencyKey): number | null {
-  if (frequency === "close") return prices.close[d][t]
-  if (frequency === "open") return prices.open[d][t]
-  if (frequency === "high") return prices.high[d][t]
-  if (frequency === "low") return prices.low[d][t]
-  return prices.close[d][t] // "session" decides at EOD like close; kept distinct for UI clarity
-}
-
 type Signal = { tickerIdx: number; action: "BUY" | "SELL" | "HOLD" | "NO_ACTION"; prob: number | null }
 
-function membership(prev: boolean, now: boolean | null, crossover: boolean): boolean {
-  if (crossover) return prev && now === true // only flip-day entries; exits happen when membership ends
-  return now === true
-}
-
-function daySignals(prices: StudioPrices, cfg: StudioConfig, d: number, prevAbove: boolean[] | null): { signals: Signal[]; above: boolean[] } {
+/** Signals via the strategy registry — the engine has no per-strategy branches. */
+function daySignals(prices: StudioPrices, cfg: StudioConfig, d: number): { signals: Signal[] } {
   const n = prices.tickers.length
-  const above: boolean[] = Array(n).fill(false)
-  const readyBits = prices.ready[d] ?? ""
   const signals: Signal[] = []
+  const def = STRATEGIES[cfg.strategy]
 
-  if (cfg.strategy === "systemone") {
+  if (def.replays) {
     const rows = prices.decisions[prices.dates[d]] ?? []
     for (const row of rows) {
       const action = (["BUY", "HOLD", "SELL", "NO_ACTION"] as const)[row.t[1]]
       signals.push({ tickerIdx: row.t[0], action, prob: row.t[2] })
     }
-    return { signals, above }
+    return { signals }
   }
 
-  const emaKey = cfg.strategy === "both_ema" ? "262" : cfg.strategy === "ema365" ? "365" : "262"
-  const emaSeries = cfg.strategy === "ema365" ? prices.ema["365"] : prices.ema["262"]
-  const ema2 = prices.ema["262"]
-  const ema3 = prices.ema["365"]
-
+  const ctx = {
+    dayIdx: d,
+    tickers: prices.tickers,
+    open: prices.open,
+    high: prices.high,
+    low: prices.low,
+    close: prices.close,
+    r20: prices.r20,
+    ema: prices.ema,
+    ready: prices.ready,
+    frequency: cfg.frequency,
+  }
+  const scores = def.rank(ctx)
   for (let t = 0; t < n; t += 1) {
-    if (readyBits[t] !== "1") continue
-    const price = evalPrice(prices, d, t, cfg.frequency)
-    if (price == null) continue
-
-    if (cfg.strategy === "momentum") {
-      const v = prices.r20[d][t]
-      if (v != null) signals.push({ tickerIdx: t, action: "NO_ACTION", prob: v })
-      continue
-    }
-
-    const e = emaSeries[d][t]
-    const in262 = price > (ema2[d][t] ?? Infinity)
-    const in365 = price > (ema3[d][t] ?? Infinity)
-    above[t] = cfg.strategy === "both_ema" ? in262 && in365 : price > (e ?? Infinity)
-    // crossover entries require a fresh flip (was out, now in); other frequencies enter on plain membership
-    const crossedIn = above[t] === true && prevAbove?.[t] !== true
-    const isMember = cfg.frequency === "crossover" ? crossedIn : above[t] === true
-    if (isMember) signals.push({ tickerIdx: t, action: "NO_ACTION", prob: null })
+    const v = scores[t]
+    if (v != null) signals.push({ tickerIdx: t, action: "NO_ACTION", prob: v })
   }
-  return { signals, above }
+  return { signals }
 }
 
 export function runStudio(prices: StudioPrices, cfg: StudioConfig): StudioResult {
@@ -162,7 +143,6 @@ export function runStudio(prices: StudioPrices, cfg: StudioConfig): StudioResult
   const plannedDays: string[] = []
   const random = mulberry32(cfg.seed)
 
-  let prevAbove: boolean[] | null = null
   // pending orders created at decision time, executed at NEXT session open
   let pending: { tickerIdx: number; action: "BUY" | "SELL"; notional?: number }[] | null = null
 
@@ -230,41 +210,45 @@ export function runStudio(prices: StudioPrices, cfg: StudioConfig): StudioResult
 
     // 3) decide for the NEXT session (skip the final day — nothing left to execute)
     if (d < total - 1) {
-      const { signals, above } = daySignals(prices, cfg, d, prevAbove)
-      prevAbove = above
+      const { signals } = daySignals(prices, cfg, d)
       plannedDays.push(dates[d])
       const orders: { tickerIdx: number; action: "BUY" | "SELL"; notional?: number }[] = []
+      const def = STRATEGIES[cfg.strategy]
 
-      if (cfg.strategy === "systemone") {
+      if (def.replays) {
         for (const s of signals) {
           if (s.action === "SELL" && shares[s.tickerIdx] > 0) orders.push({ tickerIdx: s.tickerIdx, action: "SELL" })
           if (s.action === "BUY" && shares[s.tickerIdx] === 0) orders.push({ tickerIdx: s.tickerIdx, action: "BUY", notional: cfg.maxWeight * value })
         }
-      } else if (cfg.strategy === "momentum") {
+      } else {
+        const ctx = {
+          dayIdx: d,
+          tickers: prices.tickers,
+          open: prices.open,
+          high: prices.high,
+          low: prices.low,
+          close: prices.close,
+          r20: prices.r20,
+          ema: prices.ema,
+          ready: prices.ready,
+          frequency: cfg.frequency,
+        }
+        // forced exits first (death cross), then ranking-driven rotation
+        for (const t of def.forcedExits(ctx)) {
+          if (shares[t] > 0) orders.push({ tickerIdx: t, action: "SELL" })
+        }
         const scored = signals
           .filter((s) => s.prob != null)
           .sort((a, b) => (b.prob as number) - (a.prob as number) || a.tickerIdx - b.tickerIdx)
         const targets = new Set(scored.slice(0, cfg.maxPositions).map((s) => s.tickerIdx))
         for (let t = 0; t < n; t += 1) {
-          if (shares[t] > 0 && !targets.has(t)) orders.push({ tickerIdx: t, action: "SELL" })
+          if (shares[t] > 0 && !targets.has(t) && !orders.some((o) => o.tickerIdx === t && o.action === "SELL")) orders.push({ tickerIdx: t, action: "SELL" })
         }
-        const free = cfg.maxPositions - shares.filter((s) => s > 0).length
+        const sellsPlanned = orders.filter((o) => o.action === "SELL").length
+        const free = def.refillOnExit ? cfg.maxPositions - (shares.filter((s) => s > 0).length - sellsPlanned) : cfg.maxPositions - shares.filter((s) => s > 0).length
         for (const s of scored) {
           if (orders.filter((o) => o.action === "BUY").length >= Math.max(0, free)) break
           if (shares[s.tickerIdx] === 0 && targets.has(s.tickerIdx)) orders.push({ tickerIdx: s.tickerIdx, action: "BUY", notional: cfg.maxWeight * value })
-        }
-      } else {
-        // EMA lists: equal-weight entry on members; exit when membership drops
-        const members = signals.map((s) => s.tickerIdx)
-        const memberSet = new Set(members)
-        for (let t = 0; t < n; t += 1) {
-          if (shares[t] > 0 && !memberSet.has(t)) orders.push({ tickerIdx: t, action: "SELL" })
-        }
-        const held = shares.filter((s) => s > 0).length
-        const free = Math.max(0, cfg.maxPositions - held)
-        // newest members first for stable rotation; deterministic tiebreak by index
-        for (const t of members.slice(-free)) {
-          if (shares[t] === 0) orders.push({ tickerIdx: t, action: "BUY", notional: Math.min(cfg.maxWeight * value, cash / Math.max(1, Math.min(free, members.length))) })
         }
       }
 
@@ -330,15 +314,65 @@ export function studioBenchmark(prices: StudioPrices, sessions: number): { dates
   return { dates: prices.dates.slice(0, Math.min(sessions, prices.dates.length)), values, source: "basket" }
 }
 
-/** Random baseline with the same cost/slippage/limits, seeded per run. */
+/** Random baseline with the same cost/slippage/limits, seeded per run:
+ *  a fixed random portfolio bought at the 2nd session open, held to the end. */
 export function studioRandom(prices: StudioPrices, cfg: StudioConfig): StudioResult {
   const random = mulberry32(cfg.seed)
   const picks = new Set<number>()
-  while (picks.size < cfg.maxPositions) picks.add(Math.floor(random() * prices.tickers.length))
-  const cfg2: StudioConfig = { ...cfg, strategy: "ema262" }
-  // simplest honest baseline: fixed random portfolio, buy on day 2, hold to the end
-  const out = runStudio(prices, { ...cfg2, frequency: "session" })
-  return out
+  while (picks.size < Math.min(cfg.maxPositions, prices.tickers.length)) picks.add(Math.floor(random() * prices.tickers.length))
+  const total = Math.min(cfg.sessions, prices.dates.length)
+  let cash = initialCapital
+  const trades: StudioTrade[] = []
+  const days: StudioDay[] = []
+  const equity: { date: string; value: number }[] = []
+  const sharesByTicker = new Map<number, number>()
+  const pickList = [...picks]
+  for (let d = 0; d < total; d += 1) {
+    if (d === 1) {
+      const per = Math.min(initialCapital / picks.size, (cfg.maxWeight * initialCapital))
+      for (const t of pickList) {
+        const open = prices.open[d][t]
+        if (!(open > 0)) continue
+        const exec = open * (1 + cfg.slippage)
+        const perShare = exec * (1 + cfg.cost)
+        const q = Math.floor(per / perShare)
+        if (q <= 0) continue
+        cash -= q * perShare
+        sharesByTicker.set(t, q)
+        trades.push({ date: prices.dates[d], decisionDate: prices.dates[d - 1], ticker: prices.tickers[t], action: "BUY", shares: q, executionPrice: exec, gross: q * open, cost: q * (perShare - open), net: q * perShare, cashAfter: cash })
+      }
+    }
+    let marketValue = 0
+    for (const [t, q] of sharesByTicker) {
+      const c = prices.close[d][t]
+      marketValue += q * (c != null && c > 0 ? c : prices.open[d][t] > 0 ? prices.open[d][t] : 0)
+    }
+    const value = cash + marketValue
+    days.push({ date: prices.dates[d], cash, marketValue, value })
+    equity.push({ date: prices.dates[d], value: Math.round(value * 100) / 100 })
+  }
+  const values = days.map((x) => x.value)
+  let peak = values[0] ?? initialCapital
+  let worst = 0
+  for (const v of values) {
+    if (v > peak) peak = v
+    worst = Math.min(worst, v / peak - 1)
+  }
+  return {
+    config: cfg,
+    days,
+    trades,
+    plannedDays: [],
+    equity,
+    summary: {
+      finalValue: values.at(-1) ?? initialCapital,
+      totalReturn: (values.at(-1) ?? initialCapital) / initialCapital - 1,
+      maxDrawdown: worst,
+      buyCount: trades.filter((t) => t.action === "BUY").length,
+      sellCount: 0,
+      avgHolding: null,
+    },
+  }
 }
 
 export function frequencyLabel(f: FrequencyKey): string {
