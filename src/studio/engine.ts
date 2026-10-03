@@ -216,10 +216,22 @@ export function runStudio(prices: StudioPrices, cfg: StudioConfig): StudioResult
       const def = STRATEGIES[cfg.strategy]
 
       if (def.replays) {
-        for (const s of signals) {
-          if (s.action === "SELL" && shares[s.tickerIdx] > 0) orders.push({ tickerIdx: s.tickerIdx, action: "SELL" })
-          if (s.action === "BUY" && shares[s.tickerIdx] === 0) orders.push({ tickerIdx: s.tickerIdx, action: "BUY", notional: cfg.maxWeight * value })
-        }
+        // parity with the frozen runner's planTrades(): rank BUY candidates by the
+        // model's chosen probability, fill free slots, notional = min(cap, cash/free)
+        const buys = signals
+          .filter((s) => s.action === "BUY" && shares[s.tickerIdx] === 0)
+          .sort((a, b) => (b.prob ?? -1) - (a.prob ?? -1) || a.tickerIdx - b.tickerIdx)
+        const sells = signals.filter((s) => s.action === "SELL" && shares[s.tickerIdx] > 0)
+        for (const s of sells) orders.push({ tickerIdx: s.tickerIdx, action: "SELL" })
+        const freeSlots = cfg.maxPositions - (shares.filter((s) => s > 0).length - sells.length)
+        const accepted = buys.slice(0, Math.max(0, freeSlots))
+        const projectedCash = cash + sells.reduce((sum, s) => {
+          const t = s.tickerIdx
+          const close = prices.close[d][t]
+          return sum + (close != null && close > 0 ? shares[t] * close * (1 - cfg.slippage) * (1 - cfg.cost) : 0)
+        }, 0)
+        const notional = accepted.length === 0 ? 0 : Math.min(cfg.maxWeight * value, projectedCash / accepted.length)
+        for (const s of accepted) orders.push({ tickerIdx: s.tickerIdx, action: "BUY", notional: Math.max(0, notional) })
       } else {
         const ctx = {
           dayIdx: d,
