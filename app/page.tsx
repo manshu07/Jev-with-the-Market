@@ -103,15 +103,52 @@ export default async function Home() {
             using stock investing as the test bed, not as a product.
           </p>
           <div className="mt-5 flex flex-wrap gap-2">
-            <Link href="/experiments/replay" className="rounded bg-[#3ddc97] px-4 py-2 text-sm font-semibold text-[#06281a]">
-              Open historical replay
+            <Link href="/experiments/studio" className="rounded bg-[#3ddc97] px-4 py-2 text-sm font-semibold text-[#06281a]">
+              Run your own experiment →
             </Link>
             <Link href="/experiments/analysis" className="rounded bg-white/10 px-4 py-2 text-sm hover:bg-white/15">
-              Open analysis
+              Custom analysis
+            </Link>
+            <Link href="/experiments/replay" className="rounded bg-white/10 px-4 py-2 text-sm hover:bg-white/15">
+              Recorded replay
             </Link>
             <Link href="/experiments/phase3" className="rounded bg-white/10 px-4 py-2 text-sm hover:bg-white/15">
-              Open audit
+              Audit
             </Link>
+          </div>
+
+          {/* Custom experiment callout */}
+          <div className="mt-5 grid gap-3 rounded-lg border border-[#3ddc97]/30 bg-[#3ddc97]/5 p-4 sm:grid-cols-2">
+            <div>
+              <p className="text-[10px] tracking-[0.16em] text-[#3ddc97]">YOUR EXPERIMENT, YOUR RULES</p>
+              <h2 className="mt-1 text-base font-semibold text-[#f4f1ea]">Backtest any settings in your browser</h2>
+              <p className="mt-1 text-xs leading-5 text-[#c9d2e3]">
+                Pick a period (1-5y or custom dates), cap trading sessions, choose the decision frequency (close / crossover /
+                session end / candle low / high / open), set allocation, transaction cost and slippage — then run Momentum,
+                EMA-262/365 or the recorded System One decisions on real NIFTY 100 data. Everything recomputes live.
+              </p>
+              <div className="mt-3 flex flex-wrap gap-2">
+                <Link href="/experiments/studio" className="rounded bg-[#3ddc97] px-3 py-1.5 text-xs font-semibold text-[#06281a]">
+                  Custom Backtest (Studio)
+                </Link>
+                <Link href="/experiments/analysis" className="rounded bg-white/10 px-3 py-1.5 text-xs hover:bg-white/15">
+                  Custom Analysis (win rate · PF · drawdowns)
+                </Link>
+              </div>
+            </div>
+            <div className="grid grid-cols-2 gap-2 self-center text-center">
+              {[
+                ["PERIOD", "1-5y + custom dates"],
+                ["FREQUENCY", "6 decision timings"],
+                ["ALLOCATION", "2-100% (default 20%)"],
+                ["COSTS", "cost + slippage, editable"],
+              ].map(([k, v]) => (
+                <div key={k} className="rounded-md border border-white/10 bg-[#0b1220] px-2 py-2">
+                  <p className="text-[9px] tracking-[0.14em] text-[#9aa4b8]">{k}</p>
+                  <p className="mt-0.5 text-[11px] text-[#f4f1ea]">{v}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
