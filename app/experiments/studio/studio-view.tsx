@@ -3,7 +3,6 @@
 import { useCallback, useEffect, useMemo, useState } from "react"
 import { CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts"
 import { runStudio, studioBenchmark, frequencyLabel, type StudioConfig, type StudioPrices, type StrategyKey, type FrequencyKey } from "@/src/studio/engine"
-
 const pct = (x: number) => `${(x * 100).toFixed(2)}%`
 const inr = (v: number) => `₹${Math.round(v).toLocaleString("en-IN")}`
 
@@ -123,6 +122,72 @@ export function StudioView() {
   }, [result, bench])
 
   const onSessionsChange = useCallback((v: number) => setSessions(v), [])
+
+  // ---- server audit state ----
+  type AuditRow = { name: string; verdict: "PASS" | "FAIL"; detail: string }
+  type LedgerRow = {
+    ticker: string
+    buys: number
+    sells: number
+    open: boolean
+    realizedPnlPct: number | null
+    wins: number
+    losses: number
+    maxHolding: number
+    maxHoldingDates: { buy: string; sell: string } | null
+    currentHolding: number | null
+  }
+  type AuditPayload = {
+    auditId: string
+    generatedAt: string
+    verdict: "PASS" | "FAIL"
+    window: { start: string; end: string; sessions: number }
+    serverSummary: { finalValue: number; totalReturn: number; maxDrawdown: number; buyCount: number; sellCount: number; avgHolding: number | null }
+    checks: AuditRow[]
+    stockLedger: LedgerRow[]
+  }
+  const [audit, setAudit] = useState<AuditPayload | null>(null)
+  const [auditState, setAuditState] = useState<"idle" | "loading" | "error">("idle")
+  const [auditError, setAuditError] = useState<string | null>(null)
+  const [ledgerFilter, setLedgerFilter] = useState<"all" | "buys" | "sells" | "holds">("all")
+
+  const runServerAudit = useCallback(async () => {
+    if (!result || !slice) return
+    setAuditState("loading")
+    setAuditError(null)
+    try {
+      const res = await fetch("/api/studio/audit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          config: {
+            strategy,
+            frequency,
+            sessions: slice.dates.length,
+            maxWeight: maxWeight / 100,
+            cost: cost / 100,
+            slippage: slippage / 100,
+            maxPositions,
+            seed: 20260922,
+          },
+          window: { start: slice.dates[0], end: slice.dates.at(-1), sessions: slice.dates.length },
+          clientSummary: {
+            finalValue: result.summary.finalValue,
+            totalReturn: result.summary.totalReturn,
+            maxDrawdown: result.summary.maxDrawdown,
+            buyCount: result.summary.buyCount,
+            sellCount: result.summary.sellCount,
+          },
+        }),
+      })
+      if (!res.ok) throw new Error(`http ${res.status}`)
+      setAudit((await res.json()) as AuditPayload)
+      setAuditState("idle")
+    } catch (e) {
+      setAuditError(String(e))
+      setAuditState("error")
+    }
+  }, [result, slice, strategy, frequency, maxWeight, cost, slippage, maxPositions])
 
   return (
     <div className="space-y-6">
@@ -348,8 +413,7 @@ export function StudioView() {
                 <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
                   <h2 className="text-sm font-medium">Trade ledger ({result.trades.length})</h2>
                   <p className="text-[11px] text-[#9aa4b8]">decision → next-open execution · cost {(result.config.cost * 100).toFixed(2)}% · slippage {(result.config.slippage * 100).toFixed(2)}%</p>
-                </div>
-                <div className="max-h-[360px] overflow-auto">
+                </div>                <div className="max-h-[360px] overflow-auto">
                   <table className="w-full text-xs">
                     <thead className="sticky top-0 bg-[#161b22] text-[#9aa4b8]">
                       <tr>
@@ -379,6 +443,132 @@ export function StudioView() {
                     </tbody>
                   </table>
                 </div>
+              </section>
+
+              {/* ---- SERVER AUDIT ---- */}
+              <section className="rounded-lg border border-[#7eb6ff]/30 bg-[#7eb6ff]/5 p-4">
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <div>
+                    <h2 className="text-sm font-medium">Server audit</h2>
+                    <p className="mt-1 max-w-2xl text-[11px] leading-5 text-[#9aa4b8]">
+                      Sends ONLY your settings to the server. The server independently re-runs the same backtest on the same dataset, cross-checks every headline number, verifies accounting and constraint invariants, and returns the full stock ledger (buys / sells / holds with maximum holding periods). Your browser numbers are never trusted — they are recomputed.
+                    </p>
+                  </div>
+                  <button
+                    onClick={runServerAudit}
+                    disabled={auditState === "loading"}
+                    className="min-h-[40px] rounded-md border border-[#7eb6ff] bg-[#7eb6ff]/10 px-4 text-sm text-[#7eb6ff] hover:bg-[#7eb6ff]/20 disabled:opacity-50"
+                  >
+                    {auditState === "loading" ? "Auditing…" : "Audit this run on the server"}
+                  </button>
+                </div>
+                {auditState === "error" && (
+                  <p className="mt-3 text-xs text-[#ff6b6b]">
+                    Audit failed: {auditError}{" "}
+                    <button onClick={runServerAudit} className="underline">
+                      Retry
+                    </button>
+                  </p>
+                )}
+                {audit && (
+                  <div className="mt-4 space-y-4">
+                    <div className="flex flex-wrap items-center gap-3 text-xs">
+                      <span className={`rounded-md border px-3 py-1 font-semibold ${audit.verdict === "PASS" ? "border-[#3ddc97] text-[#3ddc97]" : "border-[#ff6b6b] text-[#ff6b6b]"}`}>{audit.verdict}</span>
+                      <span className="text-[#9aa4b8]">audit id {audit.auditId}</span>
+                      <span className="text-[#9aa4b8]">
+                        server: {inr(audit.serverSummary.finalValue)} ({pct(audit.serverSummary.totalReturn)}) · {audit.window.sessions} sessions {audit.window.start}→{audit.window.end}
+                      </span>
+                      <span className="text-[#9aa4b8]">generated {new Date(audit.generatedAt).toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })} IST</span>
+                    </div>
+                    <div className="overflow-auto rounded-md border border-white/10">
+                      <table className="w-full text-xs">
+                        <thead className="bg-[#161b22] text-[#9aa4b8]">
+                          <tr>
+                            <th className="px-3 py-2 text-left font-medium">Check</th>
+                            <th className="px-3 py-2 text-left font-medium">Verdict</th>
+                            <th className="px-3 py-2 text-left font-medium">Evidence</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {audit.checks.map((c) => (
+                            <tr key={c.name} className="border-t border-white/5">
+                              <td className="px-3 py-1.5 font-mono text-[11px]">{c.name}</td>
+                              <td className={`px-3 py-1.5 font-semibold ${c.verdict === "PASS" ? "text-[#3ddc97]" : "text-[#ff6b6b]"}`}>{c.verdict}</td>
+                              <td className="px-3 py-1.5 text-[#9aa4b8]">{c.detail}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+
+                    {/* stock ledger with max holding periods */}
+                    <div>
+                      <div className="flex flex-wrap items-center justify-between gap-2">
+                        <h3 className="text-sm font-medium">Stock ledger — buys / sells / holds with maximum holding period</h3>
+                        <div className="flex gap-1">
+                          {(["all", "buys", "sells", "holds"] as const).map((f) => (
+                            <button
+                              key={f}
+                              onClick={() => setLedgerFilter(f)}
+                              className={`min-h-[32px] rounded-md border px-3 text-[11px] ${ledgerFilter === f ? "border-white/40 bg-white/10 text-white" : "border-white/15 text-[#9aa4b8] hover:text-white"}`}
+                            >
+                              {f}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+                      <div className="mt-2 max-h-[420px] overflow-auto rounded-md border border-white/10">
+                        <table className="w-full text-xs">
+                          <thead className="sticky top-0 bg-[#161b22] text-[#9aa4b8]">
+                            <tr>
+                              <th className="px-3 py-2 text-left font-medium">Stock</th>
+                              <th className="px-3 py-2 text-right font-medium">Buys</th>
+                              <th className="px-3 py-2 text-right font-medium">Sells</th>
+                              <th className="px-3 py-2 text-center font-medium">Action mix</th>
+                              <th className="px-3 py-2 text-right font-medium">Avg P&L</th>
+                              <th className="px-3 py-2 text-right font-medium">W/L</th>
+                              <th className="px-3 py-2 text-right font-medium">Max hold</th>
+                              <th className="px-3 py-2 text-left font-medium">Longest stretch</th>
+                              {ledgerFilter === "holds" && <th className="px-3 py-2 text-right font-medium">Still holding</th>}
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {audit.stockLedger
+                              .filter((r) => {
+                                if (ledgerFilter === "buys") return r.buys > 0
+                                if (ledgerFilter === "sells") return r.sells > 0
+                                if (ledgerFilter === "holds") return r.open || r.currentHolding != null
+                                return true
+                              })
+                              .map((r) => (
+                                <tr key={r.ticker} className="border-t border-white/5">
+                                  <td className="px-3 py-1.5 font-medium">{r.ticker}</td>
+                                  <td className="px-3 py-1.5 text-right">{r.buys}</td>
+                                  <td className="px-3 py-1.5 text-right">{r.sells}</td>
+                                  <td className="px-3 py-1.5 text-center text-[#9aa4b8]">{r.wins}W / {r.losses}L{r.open ? " · open" : ""}</td>
+                                  <td className={`px-3 py-1.5 text-right ${(r.realizedPnlPct ?? 0) >= 0 ? "text-[#3ddc97]" : "text-[#ff6b6b]"}`}>{r.realizedPnlPct == null ? "—" : pct(r.realizedPnlPct)}</td>
+                                  <td className="px-3 py-1.5 text-right">{r.wins}/{r.losses}</td>
+                                  <td className="px-3 py-1.5 text-right font-semibold">{r.maxHolding} sessions</td>
+                                  <td className="px-3 py-1.5 text-[#9aa4b8]">{r.maxHoldingDates ? `${r.maxHoldingDates.buy} → ${r.maxHoldingDates.sell}` : "—"}</td>
+                                  {ledgerFilter === "holds" && <td className="px-3 py-1.5 text-right">{r.currentHolding != null ? `${r.currentHolding} sessions` : "—"}</td>}
+                                </tr>
+                              ))}
+                            {audit.stockLedger.filter((r) => (ledgerFilter === "holds" ? r.open || r.currentHolding != null : ledgerFilter === "buys" ? r.buys > 0 : ledgerFilter === "sells" ? r.sells > 0 : true)).length === 0 && (
+                              <tr>
+                                <td className="px-3 py-3 text-[#9aa4b8]" colSpan={9}>
+                                  No stocks in this filter for the current run.
+                                </td>
+                              </tr>
+                            )}
+                          </tbody>
+                        </table>
+                      </div>
+                      <p className="mt-2 text-[11px] text-[#9aa4b8]">
+                        Ledger sorted by maximum holding period (longest first). "Max hold" is the longest completed buy→sell round trip per stock in YOUR window; the dates show that exact stretch. Audit id is deterministic for the same inputs — quote it when reporting.
+                      </p>
+                    </div>
+                  </div>
+                )}
               </section>
             </>
           )}
